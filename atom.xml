@@ -3,11 +3,11 @@
   <title>Junglingfish&#39;s Blog</title>
   
   
-  <link href="https://junglingfish.github.io/junglingfish/junglingfish.github.io/atom.xml" rel="self"/>
+  <link href="https://junglingfish.github.io/atom.xml" rel="self"/>
   
-  <link href="https://junglingfish.github.io/junglingfish/junglingfish.github.io/"/>
+  <link href="https://junglingfish.github.io/"/>
   <updated>2022-07-02T13:41:27.104Z</updated>
-  <id>https://junglingfish.github.io/junglingfish/junglingfish.github.io/</id>
+  <id>https://junglingfish.github.io/</id>
   
   <author>
     <name>John Doe</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://junglingfish.github.io/junglingfish/junglingfish.github.io/2022/07/02/hello-world/"/>
-    <id>https://junglingfish.github.io/junglingfish/junglingfish.github.io/2022/07/02/hello-world/</id>
+    <link href="https://junglingfish.github.io/2022/07/02/hello-world/"/>
+    <id>https://junglingfish.github.io/2022/07/02/hello-world/</id>
     <published>2022-07-02T13:41:27.104Z</published>
     <updated>2022-07-02T13:41:27.104Z</updated>
     

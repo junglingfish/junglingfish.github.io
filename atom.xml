@@ -6,7 +6,7 @@
   <link href="https://junglingfish.github.io/atom.xml" rel="self"/>
   
   <link href="https://junglingfish.github.io/"/>
-  <updated>2022-07-10T10:12:09.651Z</updated>
+  <updated>2022-07-10T10:37:21.452Z</updated>
   <id>https://junglingfish.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>R_coding</title>
+    <link href="https://junglingfish.github.io/2022/07/10/R-coding/"/>
+    <id>https://junglingfish.github.io/2022/07/10/R-coding/</id>
+    <published>2022-07-10T10:13:02.000Z</published>
+    <updated>2022-07-10T10:37:21.452Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;R-命令&quot;&gt;&lt;a href=&quot;#R-命令&quot; class=&quot;headerlink&quot; title=&quot;R 命令&quot;&gt;&lt;/a&gt;R 命令&lt;/h2&gt;&lt;h4 id=&quot;包的安装&quot;&gt;&lt;a href=&quot;#包的安装&quot; class=&quot;headerlink&quot; title=&quot;包的安装&quot;&gt;&lt;/a&gt;包的安装&lt;/h4&gt;&lt;figure class=&quot;highlight r&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;install.packages&lt;span class=&quot;punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&amp;quot;***&amp;quot;&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;install.packages &lt;span class=&quot;punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&amp;quot;ABC&amp;quot;&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;,&lt;/span&gt;repos&lt;span class=&quot;operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&amp;quot;http://mirror.bjtu.edu.cn/ &amp;quot;&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;BiocManager&lt;span class=&quot;operator&quot;&gt;::&lt;/span&gt;install&lt;span class=&quot;punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&amp;#x27;SingleCellExperiment&amp;#x27;&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;devtools&lt;span class=&quot;operator&quot;&gt;::&lt;/span&gt;install_github&lt;span class=&quot;punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;&amp;quot;Japrin/sscClust&amp;quot;&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;.libPaths&lt;span class=&quot;punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;#包的位置&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;installed.packages&lt;span class=&quot;punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;#查看你已经安装了哪些包。&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;available.packages&lt;span class=&quot;punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;#可以查看自己的机器可以安装哪些包&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;保存&quot;&gt;&lt;a href=&quot;#保存&quot; class=&quot;headerlink&quot; title=&quot;保存&quot;&gt;&lt;/a&gt;保存</summary>
+    
+    
+    
+    <category term="R coding" scheme="https://junglingfish.github.io/categories/R-coding/"/>
+    
+    
+    <category term="R coding" scheme="https://junglingfish.github.io/tags/R-coding/"/>
+    
+    <category term="Single cell analysis" scheme="https://junglingfish.github.io/tags/Single-cell-analysis/"/>
+    
+  </entry>
   
   <entry>
     <title>ask for data</title>

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>R_coding |  Junglingfish&#39;s Sea</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      
+<link rel="stylesheet" href="/css/fonts/remixicon.css">
+
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="Junglingfish's Sea" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-R-coding"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  R_coding
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/07/10/R-coding/" class="article-date">
+  <time datetime="2022-07-10T10:13:02.000Z" itemprop="datePublished">2022-07-10</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/R-coding/">R coding</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">2.2k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">10 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="R-命令"><a href="#R-命令" class="headerlink" title="R 命令"></a>R 命令</h2><h4 id="包的安装"><a href="#包的安装" class="headerlink" title="包的安装"></a>包的安装</h4><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">install.packages<span class="punctuation">(</span><span class="string">&quot;***&quot;</span><span class="punctuation">)</span></span><br><span class="line">install.packages <span class="punctuation">(</span><span class="string">&quot;ABC&quot;</span><span class="punctuation">,</span>repos<span class="operator">=</span><span class="string">&quot;http://mirror.bjtu.edu.cn/ &quot;</span><span class="punctuation">)</span></span><br><span class="line">BiocManager<span class="operator">::</span>install<span class="punctuation">(</span><span class="string">&#x27;SingleCellExperiment&#x27;</span><span class="punctuation">)</span></span><br><span class="line">devtools<span class="operator">::</span>install_github<span class="punctuation">(</span><span class="string">&quot;Japrin/sscClust&quot;</span><span class="punctuation">)</span></span><br><span class="line">.libPaths<span class="punctuation">(</span><span class="punctuation">)</span> <span class="comment">#包的位置</span></span><br><span class="line">installed.packages<span class="punctuation">(</span><span class="punctuation">)</span> <span class="comment">#查看你已经安装了哪些包。</span></span><br><span class="line">available.packages<span class="punctuation">(</span><span class="punctuation">)</span> <span class="comment">#可以查看自己的机器可以安装哪些包</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="保存"><a href="#保存" class="headerlink" title="保存"></a>保存<span id="more"></span></h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">save.image<span class="punctuation">(</span>file <span class="operator">=</span> <span class="string">&quot;test.RData&quot;</span><span class="punctuation">)</span>    <span class="comment">#保存当前所有变量</span></span><br><span class="line">save<span class="punctuation">(</span>mouse<span class="punctuation">,</span> file <span class="operator">=</span> <span class="string">&quot;test.RData&quot;</span><span class="punctuation">)</span>   <span class="comment">#保存其中一个变量</span></span><br><span class="line">load<span class="punctuation">(</span>mouse.RData<span class="punctuation">)</span>  <span class="comment">#使用时加载命令</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="提取指定亚群"><a href="#提取指定亚群" class="headerlink" title="提取指定亚群"></a>提取指定亚群</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd4_sce1 <span class="operator">=</span> sce<span class="punctuation">[</span><span class="punctuation">,</span>sce<span class="operator">@</span>meta.data<span class="operator">$</span>seurat_clusters <span class="operator">%in%</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">0</span><span class="punctuation">,</span><span class="number">2</span><span class="punctuation">)</span><span class="punctuation">]</span></span><br><span class="line">cd4_sce2 <span class="operator">=</span> sce<span class="punctuation">[</span><span class="punctuation">,</span> Idents<span class="punctuation">(</span>sce<span class="punctuation">)</span> <span class="operator">%in%</span> <span class="built_in">c</span><span class="punctuation">(</span> <span class="string">&quot;Naive CD4 T&quot;</span> <span class="punctuation">,</span>  <span class="string">&quot;Memory CD4 T&quot;</span> <span class="punctuation">)</span><span class="punctuation">]</span> <span class="comment"># subset 函数也可以</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Seurat-对象输出"><a href="#Seurat-对象输出" class="headerlink" title="Seurat 对象输出"></a>Seurat 对象输出</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">library<span class="punctuation">(</span>data.table<span class="punctuation">)</span></span><br><span class="line">y <span class="operator">=</span> GetAssayData<span class="punctuation">(</span>object <span class="operator">=</span> object<span class="punctuation">,</span> slot <span class="operator">=</span> <span class="string">&quot;scale.data&quot;</span><span class="punctuation">)</span></span><br><span class="line">data_to_write_out <span class="operator">&lt;-</span> as.data.frame<span class="punctuation">(</span>as.matrix<span class="punctuation">(</span>y<span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line">fwrite<span class="punctuation">(</span>x <span class="operator">=</span> data_to_write_out<span class="punctuation">,</span> file <span class="operator">=</span> <span class="string">&quot;outfile.csv&quot;</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="write-table"><a href="#write-table" class="headerlink" title="write.table"></a>write.table</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Usage</span><br><span class="line">write.table<span class="punctuation">(</span>x<span class="punctuation">,</span> file <span class="operator">=</span> <span class="string">&quot;&quot;</span><span class="punctuation">,</span> append <span class="operator">=</span> <span class="literal">FALSE</span><span class="punctuation">,</span> <span class="built_in">quote</span> <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">,</span> sep <span class="operator">=</span> <span class="string">&quot; &quot;</span><span class="punctuation">,</span></span><br><span class="line">            eol <span class="operator">=</span> <span class="string">&quot;\n&quot;</span><span class="punctuation">,</span> na <span class="operator">=</span> <span class="string">&quot;NA&quot;</span><span class="punctuation">,</span> dec <span class="operator">=</span> <span class="string">&quot;.&quot;</span><span class="punctuation">,</span> row.names <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">,</span></span><br><span class="line">            col.names <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">,</span> qmethod <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;escape&quot;</span><span class="punctuation">,</span> <span class="string">&quot;double&quot;</span><span class="punctuation">)</span><span class="punctuation">,</span></span><br><span class="line">            fileEncoding <span class="operator">=</span> <span class="string">&quot;&quot;</span><span class="punctuation">)</span></span><br><span class="line">write.csv<span class="punctuation">(</span>...<span class="punctuation">)</span></span><br><span class="line">write.csv2<span class="punctuation">(</span>...<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="两组差异基因的寻找"><a href="#两组差异基因的寻找" class="headerlink" title="两组差异基因的寻找"></a>两组差异基因的寻找</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/FightingBob/article/details/104814298">https://blog.csdn.net/FightingBob/article/details/104814298</a></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">library<span class="punctuation">(</span>limma<span class="punctuation">)</span></span><br><span class="line">library<span class="punctuation">(</span>edgeR<span class="punctuation">)</span></span><br><span class="line">library<span class="punctuation">(</span>statmod<span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line">targets <span class="operator">&lt;-</span> as.matrix<span class="punctuation">(</span>read.csv<span class="punctuation">(</span><span class="string">&quot;F:/公众号/图文素材/运用limma对基因进行差异分析/limma_data.csv&quot;</span><span class="punctuation">,</span> header <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">,</span> row.names <span class="operator">=</span> <span class="number">1</span><span class="punctuation">)</span><span class="punctuation">)</span> <span class="comment">#行为细胞名，列为基因名</span></span><br><span class="line">group <span class="operator">&lt;-</span> <span class="built_in">rep</span><span class="punctuation">(</span><span class="built_in">c</span><span class="punctuation">(</span><span class="string">&#x27;C1&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;C2&#x27;</span><span class="punctuation">)</span><span class="punctuation">,</span> each <span class="operator">=</span> <span class="number">56</span><span class="punctuation">,</span> length.out <span class="operator">=</span> <span class="number">83</span><span class="punctuation">)</span> <span class="comment">#C1是未突变组，C2是突变组 C1=56 C1+C2=83</span></span><br><span class="line">dgelist <span class="operator">&lt;-</span> DGEList<span class="punctuation">(</span>counts <span class="operator">=</span> targets<span class="punctuation">,</span> group <span class="operator">=</span> group<span class="punctuation">)</span></span><br><span class="line">keep <span class="operator">&lt;-</span> rowSums<span class="punctuation">(</span>cpm<span class="punctuation">(</span>dgelist<span class="punctuation">)</span> <span class="operator">&gt;</span> <span class="number">1</span> <span class="punctuation">)</span> <span class="operator">&gt;=</span> <span class="number">2</span> <span class="comment">#过滤</span></span><br><span class="line">dgelist <span class="operator">&lt;-</span> dgelist<span class="punctuation">[</span>keep<span class="punctuation">,</span> <span class="punctuation">,</span>keep.lib.sizes <span class="operator">=</span> <span class="literal">FALSE</span><span class="punctuation">]</span></span><br><span class="line">dgelist_norm <span class="operator">&lt;-</span> calcNormFactors<span class="punctuation">(</span>dgelist<span class="punctuation">,</span> method <span class="operator">=</span> <span class="string">&#x27;TMM&#x27;</span><span class="punctuation">)</span>  <span class="comment">#TMM标准化</span></span><br><span class="line">design <span class="operator">&lt;-</span> model.matrix<span class="punctuation">(</span><span class="operator">~</span>group<span class="punctuation">)</span>    <span class="comment">#构建分组矩阵</span></span><br><span class="line">dge <span class="operator">&lt;-</span> estimateDisp<span class="punctuation">(</span>dgelist_norm<span class="punctuation">,</span> design<span class="punctuation">,</span> robust <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">)</span> <span class="comment">#估算离散值</span></span><br><span class="line"><span class="comment">#差异分析</span></span><br><span class="line">fit <span class="operator">&lt;-</span> glmFit<span class="punctuation">(</span>dge<span class="punctuation">,</span> design<span class="punctuation">,</span> robust <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">)</span>     <span class="comment">#拟合模型</span></span><br><span class="line">lrt <span class="operator">&lt;-</span> glmLRT<span class="punctuation">(</span>fit<span class="punctuation">)</span>   <span class="comment">#统计检验</span></span><br><span class="line">topTags<span class="punctuation">(</span>lrt<span class="punctuation">)</span></span><br><span class="line">write.csv<span class="punctuation">(</span>topTags<span class="punctuation">(</span>lrt<span class="punctuation">,</span> n <span class="operator">=</span> nrow<span class="punctuation">(</span>dgelist<span class="operator">$</span>counts<span class="punctuation">)</span><span class="punctuation">)</span><span class="punctuation">,</span> <span class="string">&#x27; F:/公众号/图文素材/运用limma对基因进行差异分析/glmLRT.csv&#x27;</span><span class="punctuation">,</span> <span class="built_in">quote</span> <span class="operator">=</span> <span class="literal">FALSE</span><span class="punctuation">)</span> <span class="comment">#输出主要结果</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="火山图"><a href="#火山图" class="headerlink" title="火山图"></a>火山图</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/FightingBob/article/details/106161956">https://blog.csdn.net/FightingBob/article/details/106161956</a></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">library<span class="punctuation">(</span>ggplot2<span class="punctuation">)</span></span><br><span class="line">diff_stat <span class="operator">&lt;-</span> read.csv<span class="punctuation">(</span><span class="string">&quot;F:/公众号/图文素材/绘制火山图&amp;热图/data.csv&quot;</span><span class="punctuation">,</span> header <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">,</span> row.names <span class="operator">=</span> <span class="number">1</span><span class="punctuation">)</span></span><br><span class="line">diff_stat<span class="punctuation">[</span>which<span class="punctuation">(</span>diff_stat<span class="operator">$</span>FDR <span class="operator">&lt;</span> <span class="number">0.05</span> <span class="operator">&amp;</span> diff_stat<span class="operator">$</span>logFC <span class="operator">&gt;=</span> <span class="number">2</span><span class="punctuation">)</span><span class="punctuation">,</span><span class="string">&#x27;diff&#x27;</span><span class="punctuation">]</span> <span class="operator">&lt;-</span> <span class="string">&#x27;up&#x27;</span> <span class="comment">#上调趋势筛选</span></span><br><span class="line">diff_stat<span class="punctuation">[</span>which<span class="punctuation">(</span>diff_stat<span class="operator">$</span>FDR <span class="operator">&lt;</span> <span class="number">0.05</span> <span class="operator">&amp;</span> diff_stat<span class="operator">$</span>logFC <span class="operator">&lt;=</span> <span class="operator">-</span><span class="number">2</span><span class="punctuation">)</span><span class="punctuation">,</span><span class="string">&#x27;diff&#x27;</span><span class="punctuation">]</span> <span class="operator">&lt;-</span> <span class="string">&#x27;dowm&#x27;</span> <span class="comment">#下调趋势筛选</span></span><br><span class="line">diff_stat<span class="punctuation">[</span><span class="operator">!</span><span class="punctuation">(</span>diff_stat<span class="operator">$</span>diff <span class="operator">%in%</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&#x27;up&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;dowm&#x27;</span><span class="punctuation">)</span><span class="punctuation">)</span><span class="punctuation">,</span><span class="string">&#x27;diff&#x27;</span><span class="punctuation">]</span> <span class="operator">&lt;-</span> <span class="string">&#x27;no&#x27;</span></span><br><span class="line">p1 <span class="operator">&lt;-</span> ggplot<span class="punctuation">(</span>diff_stat<span class="punctuation">,</span> aes<span class="punctuation">(</span>x <span class="operator">=</span> logFC<span class="punctuation">,</span> y <span class="operator">=</span> <span class="operator">-</span>log10<span class="punctuation">(</span>FDR<span class="punctuation">)</span><span class="punctuation">)</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  geom_point<span class="punctuation">(</span>aes<span class="punctuation">(</span>color <span class="operator">=</span> diff<span class="punctuation">)</span><span class="punctuation">,</span> size <span class="operator">=</span> <span class="number">0.5</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  scale_colour_manual<span class="punctuation">(</span>limits <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&#x27;up&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;dowm&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;no&#x27;</span><span class="punctuation">)</span><span class="punctuation">,</span> values <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&#x27;blue&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;red&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;gray40&#x27;</span><span class="punctuation">)</span><span class="punctuation">,</span> labels <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&#x27;Enriched OTUs&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;Depleted OTUs&#x27;</span><span class="punctuation">,</span> <span class="string">&#x27;No diff OTUs&#x27;</span><span class="punctuation">)</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  labs<span class="punctuation">(</span>x <span class="operator">=</span> <span class="string">&#x27;log2 Fold Change&#x27;</span><span class="punctuation">,</span> y <span class="operator">=</span> <span class="string">&#x27;-log10 FDR p-value&#x27;</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment">#meihua </span></span><br><span class="line">p1 <span class="operator">&lt;-</span> p1 <span class="operator">+</span></span><br><span class="line">  theme<span class="punctuation">(</span>panel.grid.major <span class="operator">=</span> element_line<span class="punctuation">(</span>color <span class="operator">=</span> <span class="string">&#x27;gray&#x27;</span><span class="punctuation">,</span> size <span class="operator">=</span> <span class="number">0.2</span><span class="punctuation">)</span><span class="punctuation">,</span> panel.background <span class="operator">=</span> element_rect<span class="punctuation">(</span>color <span class="operator">=</span> <span class="string">&#x27;black&#x27;</span><span class="punctuation">,</span> fill <span class="operator">=</span> <span class="string">&#x27;transparent&#x27;</span><span class="punctuation">)</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  geom_vline<span class="punctuation">(</span>xintercept <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="operator">-</span><span class="number">2</span><span class="punctuation">,</span> <span class="number">2</span><span class="punctuation">)</span><span class="punctuation">,</span> color <span class="operator">=</span> <span class="string">&#x27;gray&#x27;</span><span class="punctuation">,</span> linetype <span class="operator">=</span> <span class="number">2</span><span class="punctuation">,</span> size <span class="operator">=</span> <span class="number">0.5</span><span class="punctuation">)</span> <span class="operator">+</span> </span><br><span class="line">  geom_hline<span class="punctuation">(</span>yintercept <span class="operator">=</span> <span class="operator">-</span>log10<span class="punctuation">(</span><span class="number">0.05</span><span class="punctuation">)</span><span class="punctuation">,</span> color <span class="operator">=</span> <span class="string">&#x27;gray&#x27;</span><span class="punctuation">,</span> linetype <span class="operator">=</span> <span class="number">2</span><span class="punctuation">,</span> size <span class="operator">=</span> <span class="number">0.5</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">  theme<span class="punctuation">(</span>legend.title <span class="operator">=</span> element_blank<span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">,</span> legend.key <span class="operator">=</span> element_rect<span class="punctuation">(</span>fill <span class="operator">=</span> <span class="string">&#x27;transparent&#x27;</span><span class="punctuation">)</span><span class="punctuation">,</span> legend.background <span class="operator">=</span> element_rect<span class="punctuation">(</span>fill <span class="operator">=</span> <span class="string">&#x27;transparent&#x27;</span><span class="punctuation">)</span><span class="punctuation">,</span> legend.position <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">0.2</span><span class="punctuation">,</span> <span class="number">0.9</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="拟时轨迹-monocle2"><a href="#拟时轨迹-monocle2" class="headerlink" title="拟时轨迹 monocle2"></a>拟时轨迹 monocle2</h3><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/5d6fd4561bc0">https://www.jianshu.com/p/5d6fd4561bc0</a></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line">library<span class="punctuation">(</span>monocle<span class="punctuation">)</span></span><br><span class="line">pbmc <span class="operator">&lt;-</span> readRDS<span class="punctuation">(</span><span class="string">&quot;pbmc.rds&quot;</span><span class="punctuation">)</span> <span class="comment">#导入注释好的seurat对象（已注释）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##提取表型信息--细胞信息(建议载入细胞的聚类或者细胞类型鉴定信息、实验条件等信息)</span></span><br><span class="line">expr_matrix <span class="operator">&lt;-</span> as<span class="punctuation">(</span>as.matrix<span class="punctuation">(</span>pbmc<span class="operator">@</span>assays<span class="operator">$</span>RNA<span class="operator">@</span>counts<span class="punctuation">)</span><span class="punctuation">,</span> <span class="string">&#x27;sparseMatrix&#x27;</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment">##提取表型信息到p_data(phenotype_data)里面 </span></span><br><span class="line">p_data <span class="operator">&lt;-</span> pbmc<span class="operator">@</span>meta.data </span><br><span class="line">p_data<span class="operator">$</span>celltype <span class="operator">&lt;-</span> pbmc<span class="operator">@</span>active.ident  <span class="comment">##整合每个细胞的细胞鉴定信息到p_data里面。如果已经添加则不必重复添加</span></span><br><span class="line"><span class="comment">##提取基因信息 如生物类型、gc含量等</span></span><br><span class="line">f_data <span class="operator">&lt;-</span> data.frame<span class="punctuation">(</span>gene_short_name <span class="operator">=</span> row.names<span class="punctuation">(</span>pbmc<span class="punctuation">)</span><span class="punctuation">,</span>row.names <span class="operator">=</span> row.names<span class="punctuation">(</span>pbmc<span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment">##expr_matrix的行数与f_data的行数相同(gene number), expr_matrix的列数与p_data的行数相同(cell number)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#构建CDS对象</span></span><br><span class="line">pd <span class="operator">&lt;-</span> new<span class="punctuation">(</span><span class="string">&#x27;AnnotatedDataFrame&#x27;</span><span class="punctuation">,</span> data <span class="operator">=</span> p_data<span class="punctuation">)</span> </span><br><span class="line">fd <span class="operator">&lt;-</span> new<span class="punctuation">(</span><span class="string">&#x27;AnnotatedDataFrame&#x27;</span><span class="punctuation">,</span> data <span class="operator">=</span> f_data<span class="punctuation">)</span></span><br><span class="line"><span class="comment">#将p_data和f_data从data.frame转换AnnotatedDataFrame对象。</span></span><br><span class="line">cds <span class="operator">&lt;-</span> newCellDataSet<span class="punctuation">(</span>expr_matrix<span class="punctuation">,</span></span><br><span class="line">                      phenoData <span class="operator">=</span> pd<span class="punctuation">,</span></span><br><span class="line">                      featureData <span class="operator">=</span> fd<span class="punctuation">,</span></span><br><span class="line">                      lowerDetectionLimit <span class="operator">=</span> <span class="number">0.5</span><span class="punctuation">,</span></span><br><span class="line">                      expressionFamily <span class="operator">=</span> negbinomial.size<span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment">#估计size factor和离散度</span></span><br><span class="line">cds <span class="operator">&lt;-</span> estimateSizeFactors<span class="punctuation">(</span>cds<span class="punctuation">)</span></span><br><span class="line">cds <span class="operator">&lt;-</span> estimateDispersions<span class="punctuation">(</span>cds<span class="punctuation">)</span></span><br><span class="line"><span class="comment">#过滤低质量的细胞，若Seurat已经完成细胞过滤，此步可省略</span></span><br><span class="line"><span class="comment">#用表达某基因的细胞的数目对基因进行过滤</span></span><br><span class="line">cds <span class="operator">&lt;-</span> detectGenes<span class="punctuation">(</span>cds<span class="punctuation">,</span> min_expr <span class="operator">=</span> <span class="number">0.1</span><span class="punctuation">)</span> <span class="comment">#这一操作会在fData(cds)中添加一列num_cells_expressed</span></span><br><span class="line">print<span class="punctuation">(</span>head<span class="punctuation">(</span>fData<span class="punctuation">(</span>cds<span class="punctuation">)</span><span class="punctuation">)</span><span class="punctuation">)</span><span class="comment">#此时有13714个基因</span></span><br><span class="line">expressed_genes <span class="operator">&lt;-</span> row.names<span class="punctuation">(</span>subset<span class="punctuation">(</span>fData<span class="punctuation">(</span>cds<span class="punctuation">)</span><span class="punctuation">,</span></span><br><span class="line">    num_cells_expressed <span class="operator">&gt;=</span> <span class="number">10</span><span class="punctuation">)</span><span class="punctuation">)</span> <span class="comment">#过滤掉在小于10个细胞中表达的基因，还剩11095个基因。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#轨迹定义基因选择及可视化和构建轨迹</span></span><br><span class="line"><span class="comment">##使用seurat选择的高变基因⚠️</span></span><br><span class="line">express_genes <span class="operator">&lt;-</span> VariableFeatures<span class="punctuation">(</span>pbmc<span class="punctuation">)</span></span><br><span class="line">cds <span class="operator">&lt;-</span> setOrderingFilter<span class="punctuation">(</span>cds<span class="punctuation">,</span> express_genes<span class="punctuation">)</span></span><br><span class="line">plot_ordering_genes<span class="punctuation">(</span>cds<span class="punctuation">)</span></span><br><span class="line"><span class="comment">##使用clusters差异表达基因</span></span><br><span class="line">deg.cluster <span class="operator">&lt;-</span> FindAllMarkers<span class="punctuation">(</span>pbmc<span class="punctuation">)</span></span><br><span class="line">express_genes <span class="operator">&lt;-</span> subset<span class="punctuation">(</span>deg.cluster<span class="punctuation">,</span>p_val_adj<span class="operator">&lt;</span><span class="number">0.05</span><span class="punctuation">)</span><span class="operator">$</span>gene</span><br><span class="line">cds <span class="operator">&lt;-</span> setOrderingFilter<span class="punctuation">(</span>cds<span class="punctuation">,</span> express_genes<span class="punctuation">)</span></span><br><span class="line">plot_ordering_genes<span class="punctuation">(</span>cds<span class="punctuation">)</span></span><br><span class="line"><span class="comment">##使用monocle选择的高变基因⚠️</span></span><br><span class="line">disp_table <span class="operator">&lt;-</span> dispersionTable<span class="punctuation">(</span>cds<span class="punctuation">)</span></span><br><span class="line">disp.genes <span class="operator">&lt;-</span> subset<span class="punctuation">(</span>disp_table<span class="punctuation">,</span> mean_expression <span class="operator">&gt;=</span> <span class="number">0.1</span> <span class="operator">&amp;</span> dispersion_empirical <span class="operator">&gt;=</span> <span class="number">1</span> <span class="operator">*</span> dispersion_fit<span class="punctuation">)</span><span class="operator">$</span>gene_id</span><br><span class="line">cds <span class="operator">&lt;-</span> setOrderingFilter<span class="punctuation">(</span>cds<span class="punctuation">,</span> disp.genes<span class="punctuation">)</span></span><br><span class="line">plot_ordering_genes<span class="punctuation">(</span>cds<span class="punctuation">)</span></span><br><span class="line"><span class="comment">#这一步输入的expressed_genes来自于步骤4。</span></span><br><span class="line"><span class="comment">#⚠️⚠️后续分析使用的是该方法</span></span><br><span class="line"><span class="comment">#也可输入seurat筛选出的高变基因：expressed_genes &lt;- VariableFeatures(pbmc) </span></span><br><span class="line">diff <span class="operator">&lt;-</span> differentialGeneTest<span class="punctuation">(</span>cds<span class="punctuation">[</span>expressed_genes<span class="punctuation">,</span><span class="punctuation">]</span><span class="punctuation">,</span>fullModelFormulaStr<span class="operator">=</span><span class="string">&quot;~cell_type&quot;</span><span class="punctuation">,</span>cores<span class="operator">=</span><span class="number">1</span><span class="punctuation">)</span> </span><br><span class="line"><span class="comment">#~后面是表示对谁做差异分析的变量，理论上可以为p_data的任意列名</span></span><br><span class="line">head<span class="punctuation">(</span>diff<span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##差异表达基因作为轨迹构建的基因,差异基因的选择标准是qval&lt;0.01,decreasing=F表示按数值增加排序</span></span><br><span class="line">deg <span class="operator">&lt;-</span> subset<span class="punctuation">(</span>diff<span class="punctuation">,</span> qval <span class="operator">&lt;</span> <span class="number">0.01</span><span class="punctuation">)</span> <span class="comment">#选出2829个基因</span></span><br><span class="line">deg <span class="operator">&lt;-</span> deg<span class="punctuation">[</span>order<span class="punctuation">(</span>deg<span class="operator">$</span>qval<span class="punctuation">,</span>decreasing<span class="operator">=</span><span class="built_in">F</span><span class="punctuation">)</span><span class="punctuation">,</span><span class="punctuation">]</span></span><br><span class="line">head<span class="punctuation">(</span>deg<span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##差异基因的结果文件保存</span></span><br><span class="line">write.table<span class="punctuation">(</span>deg<span class="punctuation">,</span>file<span class="operator">=</span><span class="string">&quot;train.monocle.DEG.xls&quot;</span><span class="punctuation">,</span>col.names<span class="operator">=</span><span class="built_in">T</span><span class="punctuation">,</span>row.names<span class="operator">=</span><span class="built_in">F</span><span class="punctuation">,</span>sep<span class="operator">=</span><span class="string">&quot;\t&quot;</span><span class="punctuation">,</span><span class="built_in">quote</span><span class="operator">=</span><span class="built_in">F</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 轨迹构建基因可视化</span></span><br><span class="line">ordergene <span class="operator">&lt;-</span> rownames<span class="punctuation">(</span>deg<span class="punctuation">)</span> </span><br><span class="line">cds <span class="operator">&lt;-</span> setOrderingFilter<span class="punctuation">(</span>cds<span class="punctuation">,</span> ordergene<span class="punctuation">)</span>  </span><br><span class="line"><span class="comment">#这一步是很重要的，在我们得到想要的基因列表后，我们需要使用setOrderingFilter将它嵌入cds对象，后续的一系列操作都要依赖于这个list。</span></span><br><span class="line"><span class="comment">#setOrderingFilter之后，这些基因被储存在cds@featureData@data[[&quot;use_for_ordering&quot;]]，可以通过table(cds@featureData@data[[&quot;use_for_ordering&quot;]])查看</span></span><br><span class="line">pdf<span class="punctuation">(</span><span class="string">&quot;train.ordergenes.pdf&quot;</span><span class="punctuation">)</span></span><br><span class="line">plot_ordering_genes<span class="punctuation">(</span>cds<span class="punctuation">)</span></span><br><span class="line">dev.off<span class="punctuation">(</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment">#出的图黑色的点表示用来构建轨迹的差异基因，灰色表示背景基因。红色的线是根据第2步计算的基因表达大小和离散度分布的趋势(可以看到，找到的基因属于离散度比较高的基因)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#降维</span></span><br><span class="line">cds <span class="operator">&lt;-</span> reduceDimension<span class="punctuation">(</span>cds<span class="punctuation">,</span> max_components <span class="operator">=</span> <span class="number">2</span><span class="punctuation">,</span> method <span class="operator">=</span> <span class="string">&#x27;DDRTree&#x27;</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment">#Step 3: 拟时间轴轨迹构建和在拟时间内排列细胞</span></span><br><span class="line">cds <span class="operator">&lt;-</span> orderCells<span class="punctuation">(</span>cds<span class="punctuation">)</span></span><br><span class="line"><span class="comment">#⚠️使用root_state参数可以设置拟时间轴的根，如下面的拟时间着色图中可以看出，左边是根。根据state图可以看出，根是State1，若要想把另一端设为根，可以按如下操作</span></span><br><span class="line">cds <span class="operator">&lt;-</span> orderCells<span class="punctuation">(</span>cds<span class="punctuation">,</span> root_state <span class="operator">=</span> <span class="number">5</span><span class="punctuation">)</span> <span class="comment">#把State5设成拟时间轴的起始点</span></span><br><span class="line"><span class="comment">#或者</span></span><br><span class="line">GM_state <span class="operator">&lt;-</span> <span class="keyword">function</span><span class="punctuation">(</span>cds<span class="punctuation">)</span><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="keyword">if</span> <span class="punctuation">(</span><span class="built_in">length</span><span class="punctuation">(</span>unique<span class="punctuation">(</span>pData<span class="punctuation">(</span>cds<span class="punctuation">)</span><span class="operator">$</span>State<span class="punctuation">)</span><span class="punctuation">)</span> <span class="operator">&gt;</span> <span class="number">1</span><span class="punctuation">)</span><span class="punctuation">&#123;</span></span><br><span class="line">    T0_counts <span class="operator">&lt;-</span> table<span class="punctuation">(</span>pData<span class="punctuation">(</span>cds<span class="punctuation">)</span><span class="operator">$</span>State<span class="punctuation">,</span> pData<span class="punctuation">(</span>cds<span class="punctuation">)</span><span class="operator">$</span>seurat_clusters<span class="punctuation">)</span><span class="punctuation">[</span><span class="punctuation">,</span><span class="string">&quot;0&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="built_in">return</span><span class="punctuation">(</span><span class="built_in">as.numeric</span><span class="punctuation">(</span><span class="built_in">names</span><span class="punctuation">(</span>T0_counts<span class="punctuation">)</span><span class="punctuation">[</span>which</span><br><span class="line">                                       <span class="punctuation">(</span>T0_counts <span class="operator">==</span> <span class="built_in">max</span><span class="punctuation">(</span>T0_counts<span class="punctuation">)</span><span class="punctuation">)</span><span class="punctuation">]</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line">  <span class="punctuation">&#125;</span> <span class="keyword">else</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="built_in">return</span> <span class="punctuation">(</span><span class="number">1</span><span class="punctuation">)</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line">cds <span class="operator">&lt;-</span> orderCells<span class="punctuation">(</span>cds<span class="punctuation">,</span> root_state <span class="operator">=</span> GM_state<span class="punctuation">(</span>cds<span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#可视化</span></span><br><span class="line">pdf<span class="punctuation">(</span><span class="string">&quot;cd8.pseudotime.pdf&quot;</span><span class="punctuation">,</span>width <span class="operator">=</span> <span class="number">10</span><span class="punctuation">,</span>height <span class="operator">=</span> <span class="number">7</span><span class="punctuation">)</span></span><br><span class="line">plot_cell_trajectory<span class="punctuation">(</span>cds<span class="punctuation">,</span> color_by<span class="operator">=</span><span class="string">&quot;Pseudotime&quot;</span><span class="punctuation">,</span> size<span class="operator">=</span><span class="number">1</span><span class="punctuation">,</span> show_tree <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">,</span> show_backbone<span class="operator">=</span><span class="literal">TRUE</span><span class="punctuation">)</span> </span><br><span class="line">dev.off<span class="punctuation">(</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line">pdf<span class="punctuation">(</span><span class="string">&quot;cd8.state.pdf&quot;</span><span class="punctuation">,</span>width <span class="operator">=</span> <span class="number">10</span><span class="punctuation">,</span>height <span class="operator">=</span> <span class="number">7</span><span class="punctuation">)</span></span><br><span class="line">plot_cell_trajectory<span class="punctuation">(</span>cds<span class="punctuation">,</span> color_by<span class="operator">=</span><span class="string">&quot;State&quot;</span><span class="punctuation">,</span> size<span class="operator">=</span><span class="number">1</span><span class="punctuation">,</span> show_tree <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">,</span> show_backbone<span class="operator">=</span><span class="literal">TRUE</span><span class="punctuation">)</span> </span><br><span class="line">dev.off<span class="punctuation">(</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line">pdf<span class="punctuation">(</span><span class="string">&quot;cd8.celltype.pdf&quot;</span><span class="punctuation">,</span>width <span class="operator">=</span> <span class="number">10</span><span class="punctuation">,</span>height <span class="operator">=</span> <span class="number">7</span><span class="punctuation">)</span></span><br><span class="line">plot_cell_trajectory<span class="punctuation">(</span>cds<span class="punctuation">,</span> color_by<span class="operator">=</span>Idents<span class="punctuation">(</span>cd8<span class="punctuation">)</span><span class="punctuation">,</span> size<span class="operator">=</span><span class="number">1</span><span class="punctuation">,</span> show_tree <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">,</span> show_backbone<span class="operator">=</span><span class="literal">TRUE</span><span class="punctuation">)</span> </span><br><span class="line">dev.off<span class="punctuation">(</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="颜色渐变"><a href="#颜色渐变" class="headerlink" title="颜色渐变"></a>颜色渐变</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">+</span>scale_color_gradientn<span class="punctuation">(</span>values <span class="operator">=</span> seq<span class="punctuation">(</span><span class="number">0</span><span class="punctuation">,</span><span class="number">1</span><span class="punctuation">,</span><span class="number">0.2</span><span class="punctuation">)</span><span class="punctuation">,</span>ccolours <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&#x27;#330066&#x27;</span><span class="punctuation">,</span><span class="string">&#x27;#336699&#x27;</span><span class="punctuation">,</span><span class="string">&#x27;#66CC66&#x27;</span><span class="punctuation">,</span><span class="string">&#x27;#FFCC33&#x27;</span><span class="punctuation">)</span><span class="punctuation">)</span><span class="operator">+</span><span class="comment">#颜色渐变设置</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="excel不覆盖写入"><a href="#excel不覆盖写入" class="headerlink" title="excel不覆盖写入"></a>excel不覆盖写入</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">s<span class="comment">#前面讲过如何加载已有工作簿，这里以生成新excel工作簿为例，将数据写入文件中</span></span><br><span class="line">wb <span class="operator">&lt;-</span> xlsx<span class="operator">::</span>createWorkbook<span class="punctuation">(</span><span class="punctuation">)</span></span><br><span class="line">sheets <span class="operator">&lt;-</span> getSheet<span class="punctuation">(</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment"># 新生成的工作簿没有sheet，系统提示：Workbook has no sheets!</span></span><br><span class="line">sheet <span class="operator">&lt;-</span> createSheet<span class="punctuation">(</span>wb<span class="punctuation">,</span>sheetName <span class="operator">=</span> <span class="string">&quot;newSheet1&quot;</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#此时R内存中已经生成了一个工作簿，包含一个空的sheet工作表，通过addDataFrame()函数将数据写入sheet中.</span></span><br><span class="line"><span class="comment"># 用上面生成的datas数据框对象，取前4行数据写入当前sheet对象中</span></span><br><span class="line">addDataFrame<span class="punctuation">(</span>data<span class="punctuation">[</span><span class="number">1</span><span class="operator">:</span><span class="number">4</span><span class="punctuation">,</span><span class="punctuation">]</span><span class="punctuation">,</span>sheet<span class="punctuation">,</span>row.names <span class="operator">=</span> <span class="built_in">F</span><span class="punctuation">)</span></span><br><span class="line">saveWorkbook<span class="punctuation">(</span>wb<span class="punctuation">,</span>file <span class="operator">=</span> <span class="string">&quot;iris_new.xlsx&quot;</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#如果是在已有excel工作簿上操作，这里最好做一个判断，避免覆盖现有数据，造成不必要的麻烦。如果当前sheet的最后一行索引不等于零（说明有数据），则将新数据写到最后一行数据的下一行，同时不加入列名行(col.names = FALSE)；如果为零则将数据直接添加到sheet中。</span></span><br><span class="line"><span class="comment"># 用上面生成的datas数据框对象，取前4行数据写入当前sheet对象中</span></span><br><span class="line"><span class="keyword">if</span> <span class="punctuation">(</span>sheet<span class="operator">$</span>getLastRowNum<span class="punctuation">(</span><span class="punctuation">)</span> <span class="operator">!=</span> <span class="number">0</span><span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">         addDataFrame<span class="punctuation">(</span>data<span class="punctuation">[</span><span class="number">1</span><span class="operator">:</span><span class="number">4</span><span class="punctuation">,</span><span class="punctuation">]</span><span class="punctuation">,</span>sheet<span class="punctuation">,</span>row.names <span class="operator">=</span> <span class="built_in">F</span><span class="punctuation">,</span>col.names <span class="operator">=</span> <span class="built_in">F</span><span class="punctuation">,</span>startRow <span class="operator">=</span> sheet<span class="operator">$</span>getLastRowNum<span class="punctuation">(</span><span class="punctuation">)</span> <span class="operator">+</span> <span class="number">2</span><span class="punctuation">)</span></span><br><span class="line">       <span class="punctuation">&#125;</span> <span class="keyword">else</span> <span class="punctuation">&#123;</span></span><br><span class="line">         addDataFrame<span class="punctuation">(</span>data<span class="punctuation">[</span><span class="number">1</span><span class="operator">:</span><span class="number">4</span><span class="punctuation">,</span><span class="punctuation">]</span><span class="punctuation">,</span>sheet<span class="punctuation">,</span>row.names <span class="operator">=</span> <span class="built_in">F</span><span class="punctuation">)</span></span><br><span class="line">       <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line">saveWorkbook<span class="punctuation">(</span>wb<span class="punctuation">,</span>file <span class="operator">=</span> <span class="string">&quot;iris_new.xlsx&quot;</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="合并seurat对象"><a href="#合并seurat对象" class="headerlink" title="合并seurat对象"></a>合并seurat对象</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#两个对象</span></span><br><span class="line">pbmc.combined <span class="operator">&lt;-</span> merge<span class="punctuation">(</span>pbmc4k<span class="punctuation">,</span> y <span class="operator">=</span> pbmc8k<span class="punctuation">,</span> add.cell.ids <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;4K&quot;</span><span class="punctuation">,</span> <span class="string">&quot;8K&quot;</span><span class="punctuation">)</span><span class="punctuation">,</span> project <span class="operator">=</span> <span class="string">&quot;PBMC12K&quot;</span><span class="punctuation">)</span></span><br><span class="line">pbmc.combined</span><br><span class="line"><span class="comment">#合并两个以上</span></span><br><span class="line">pbmc.big <span class="operator">&lt;-</span> merge<span class="punctuation">(</span>pbmc3k<span class="punctuation">,</span> y <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span>pbmc4k<span class="punctuation">,</span> pbmc8k<span class="punctuation">)</span><span class="punctuation">,</span> add.cell.ids <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;3K&quot;</span><span class="punctuation">,</span> <span class="string">&quot;4K&quot;</span><span class="punctuation">,</span> <span class="string">&quot;8K&quot;</span><span class="punctuation">)</span><span class="punctuation">,</span> project <span class="operator">=</span> <span class="string">&quot;PBMC15K&quot;</span><span class="punctuation">)</span></span><br><span class="line">pbmc.big</span><br></pre></td></tr></table></figure>
+
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://junglingfish.github.io/2022/07/10/R-coding/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R-coding/" rel="tag">R coding</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Single-cell-analysis/" rel="tag">Single cell analysis</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2022/07/10/ask-for-data/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">ask for data</div>
+      </a>
+    
+  </nav>
+
+  
+   
+    
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2022
+        <i class="ri-heart-fill heart_icon"></i> John Doe
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Junglingfish&#39;s Sea"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/fish">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>

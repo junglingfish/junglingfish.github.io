@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>ask for data</title>
-    <url>/2022/07/10/ask-for-data/</url>
-    <content><![CDATA[<h1 id="ask-for-data"><a href="#ask-for-data" class="headerlink" title="ask for data"></a>ask for data</h1><p>Hi Professor xxx :</p>
-<p>Thank you for reading!<br>I am a doctor in the Department of Thoracic Surgery of the Second Affiliated Hospital of Zhejiang University School of Medicine<br>My research is focused on xxx. I have recently read your paper: “ xxxxx”. The  work was so interesting and it was attractive to me.<br>I am wondering if you could kindly send me the source program, dataset and the necessary information about it. I promise they will be used only for research purposed.<br>      Thank you very much for your kind consideration and I am looking forward to your early reply.</p>
-<p>All the best,</p>
-]]></content>
-  </entry>
-  <entry>
     <title>R_coding</title>
     <url>/2022/07/10/R-coding/</url>
     <content><![CDATA[<h2 id="R-命令"><a href="#R-命令" class="headerlink" title="R 命令"></a>R 命令</h2><h4 id="包的安装"><a href="#包的安装" class="headerlink" title="包的安装"></a>包的安装</h4><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">install.packages<span class="punctuation">(</span><span class="string">&quot;***&quot;</span><span class="punctuation">)</span></span><br><span class="line">install.packages <span class="punctuation">(</span><span class="string">&quot;ABC&quot;</span><span class="punctuation">,</span>repos<span class="operator">=</span><span class="string">&quot;http://mirror.bjtu.edu.cn/ &quot;</span><span class="punctuation">)</span></span><br><span class="line">BiocManager<span class="operator">::</span>install<span class="punctuation">(</span><span class="string">&#x27;SingleCellExperiment&#x27;</span><span class="punctuation">)</span></span><br><span class="line">devtools<span class="operator">::</span>install_github<span class="punctuation">(</span><span class="string">&quot;Japrin/sscClust&quot;</span><span class="punctuation">)</span></span><br><span class="line">.libPaths<span class="punctuation">(</span><span class="punctuation">)</span> <span class="comment">#包的位置</span></span><br><span class="line">installed.packages<span class="punctuation">(</span><span class="punctuation">)</span> <span class="comment">#查看你已经安装了哪些包。</span></span><br><span class="line">available.packages<span class="punctuation">(</span><span class="punctuation">)</span> <span class="comment">#可以查看自己的机器可以安装哪些包</span></span><br></pre></td></tr></table></figure>
@@ -38,12 +30,20 @@
 
 ]]></content>
       <categories>
-        <category>R coding</category>
+        <category>R_coding</category>
       </categories>
       <tags>
-        <tag>R coding</tag>
-        <tag>Single cell analysis</tag>
+        <tag>R_coding</tag>
+        <tag>Single_cell_analysis</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>ask for data</title>
+    <url>/2022/07/10/ask-for-data/</url>
+    <content><![CDATA[<h1 id="ask-for-data"><a href="#ask-for-data" class="headerlink" title="ask for data"></a>ask for data</h1><p>Hi Professor xxx :</p>
+<p>Thank you for reading!<br>I am a doctor in the Department of Thoracic Surgery of the Second Affiliated Hospital of Zhejiang University School of Medicine<br>My research is focused on xxx. I have recently read your paper: “ xxxxx”. The  work was so interesting and it was attractive to me.<br>I am wondering if you could kindly send me the source program, dataset and the necessary information about it. I promise they will be used only for research purposed.<br>      Thank you very much for your kind consideration and I am looking forward to your early reply.</p>
+<p>All the best,</p>
+]]></content>
   </entry>
   <entry>
     <title>my</title>

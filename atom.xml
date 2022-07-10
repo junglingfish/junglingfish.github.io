@@ -6,7 +6,7 @@
   <link href="https://junglingfish.github.io/atom.xml" rel="self"/>
   
   <link href="https://junglingfish.github.io/"/>
-  <updated>2022-07-10T10:12:09.651Z</updated>
+  <updated>2022-07-10T10:13:41.544Z</updated>
   <id>https://junglingfish.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>R_coding</title>
+    <link href="https://junglingfish.github.io/2022/07/10/R-coding/"/>
+    <id>https://junglingfish.github.io/2022/07/10/R-coding/</id>
+    <published>2022-07-10T10:13:02.000Z</published>
+    <updated>2022-07-10T10:13:41.544Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;R-命令&quot;&gt;&lt;a href=&quot;#R-命令&quot; class=&quot;headerlink&quot; title=&quot;R 命令&quot;&gt;&lt;/a&gt;R 命令&lt;/h2&gt;&lt;h4 id=&quot;包的安装&quot;&gt;&lt;a href=&quot;#包的安装&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>ask for data</title>

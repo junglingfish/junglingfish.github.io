@@ -150,6 +150,58 @@
     
     
     <article
+  id="post-DynNom-Visualising-statistical-models-using-dynamic-nomograms"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/09/11/DynNom-Visualising-statistical-models-using-dynamic-nomograms/"
+    >DynNom: Visualising statistical models using dynamic nomograms</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/09/11/DynNom-Visualising-statistical-models-using-dynamic-nomograms/" class="article-date">
+  <time datetime="2022-09-11T08:30:08.000Z" itemprop="datePublished">2022-09-11</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/POAF/">POAF</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+   
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/POAF/" rel="tag">POAF</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R/" rel="tag">R</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
   id="post-Network-based-machine-learning-approach-to-predict-immunotherapy-response-in-cancer-patents"
   class="article article-type-post"
   itemscope
@@ -181,7 +233,7 @@
       
     <div class="article-entry" itemprop="articleBody">
        
-  <p><img src="C:\Users\junglingfish\AppData\Roaming\Typora\typora-user-images\image-20220909163740037.png" alt="image-20220909163740037"></p>
+  <p><img src="https://pic.imgdb.cn/item/631d9df216f2c2beb11919da.png"></p>
 <p>文章链接：<a target="_blank" rel="noopener" href="https://www.nature.com/articles/s41467-022-31535-6">https://www.nature.com/articles/s41467-022-31535-6</a></p>
 <p>源代码：<a target="_blank" rel="noopener" href="https://github.com/SBIlab/NetBio">https://github.com/SBIlab/NetBio</a></p>
 <p>本地文件位置：C:\Users\junglingfish\Zotero\storage\3H2GYTTM</p>
@@ -190,7 +242,7 @@
 <li>整理了700多例ICI治疗的患者样本，包括临床结果和转录组数据，并观察到基于netbio的预测准确预测了三种不同癌症类型的ICI治疗反应——黑色素瘤、胃癌和膀胱癌。</li>
 <li>提出了一种基于网络的方法，以有效地选择免疫治疗反应相关的生物标志物，可以对精确的肿瘤进行基于ML的稳健预测</li>
 </ol>
-<h2 id="Method："><a href="#Method：" class="headerlink" title="Method："></a>Method：</h2><p><img src="C:\Users\junglingfish\AppData\Roaming\Typora\typora-user-images\image-20220909165418495.png" alt="image-20220909165418495"></p>
+<h2 id="Method："><a href="#Method：" class="headerlink" title="Method："></a>Method：</h2><p><img src="https://pic.imgdb.cn/item/631d9e2516f2c2beb11953ae.png"></p>
 <ol>
 <li>我们使用STRING PPI网络(STRING score &gt;700)，包含16,957个节点和420,381条边。首先，采用网络传播，使用ICI靶标(例如，nivolumab的PD1或atezolizumab的PD-L1)作为种子基因，在网络上传播ICI靶标的影响。网络传播的一个特点是，越接近ICI目标的节点影响分数越高。接下来，我们选择了影响分数高的基因(top 200基因)，并鉴定了这些基因富集的生物通路(Reactome pathways)。然后，我们使用所选择的生物通路来预测免疫治疗反应，并将这些通路视为网络生物标记物(NetBio)。</li>
 <li>为了进行基于ml的免疫治疗-反应预测，我们使用NetBio作为输入特征；作为阴性对照，我们使用了基于基因的生物标志物(即免疫治疗靶基因)、基于肿瘤微环境的生物标志物或从数据驱动的ML方法中选择的通路。</li>

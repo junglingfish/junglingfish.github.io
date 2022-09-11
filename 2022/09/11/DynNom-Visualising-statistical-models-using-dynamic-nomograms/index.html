@@ -85,7 +85,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">0</span>
+            <span class="post-count">425</span>
         </span>
     </span>
 
@@ -101,13 +101,42 @@
  
     </div>
       
+    <div class="tocbot"></div>
+
 
 
 
   
     <div class="article-entry" itemprop="articleBody">
        
-   
+  <p><img src="https://pic.imgdb.cn/item/631d9ef816f2c2beb11a25ef.png"></p>
+<p>文章链接：<a target="_blank" rel="noopener" href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0225253">Visualising statistical models using dynamic nomograms | PLOS ONE</a></p>
+<p>GitHub链接：</p>
+<p>本地链接：C:\Users\junglingfish\Zotero\storage\DFF3R3PG</p>
+<h2 id="Summary："><a href="#Summary：" class="headerlink" title="Summary："></a>Summary：</h2><ol>
+<li><p>提出使用动态nomogram作为平移工具，它可以适应越来越复杂的模型。</p>
+</li>
+<li><p>文献中出现的所有模型都可以配以相应的动态nomogram来进行模型的信息转换。提出的R包将促进各种线性和非线性模型的这种通信。</p>
+</li>
+</ol>
+<h2 id="Methods-amp-Results："><a href="#Methods-amp-Results：" class="headerlink" title="Methods &amp; Results："></a>Methods &amp; Results：</h2><ol>
+<li>构建DynNom包[32]的目的是为各种统计模型生成动态的nomogram，使读者能够以用户友好的方式与模型进行交互。</li>
+</ol>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">R<span class="operator">&gt;</span> fit <span class="operator">&lt;-</span> glm<span class="punctuation">(</span>survived <span class="operator">~</span> <span class="punctuation">(</span>age <span class="operator">+</span> pclass <span class="operator">+</span> sex<span class="punctuation">)</span> <span class="operator">^</span> <span class="number">3</span><span class="punctuation">,</span> titanic3<span class="punctuation">,</span> family <span class="operator">=</span> “binomial”<span class="punctuation">)</span></span><br><span class="line">R<span class="operator">&gt;</span> DynNom<span class="punctuation">(</span>fit<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic.imgdb.cn/item/631da07416f2c2beb11bb54c.png"></p>
+<p><img src="https://pic.imgdb.cn/item/631da09816f2c2beb11bdd48.png"></p>
+<ol start="2">
+<li>该包的两个主要功能是DynNom和DNbuilder函数。前者从拟合模型中提取模型类，构建一个动态的nomogram应用程序，使用Eq 2计算并显示点和区间估计，而后者生成部署应用程序所需的文件。</li>
+<li>DynNom包支持R.中的lm、glm和coxph函数创建的模型对象。它还支持rms包中的ols、glm、lrm和cph模型，rms包允许包含平滑样条以及来自mgcv和的gam函数。</li>
+</ol>
+<p><img src="https://pic.imgdb.cn/item/631da10016f2c2beb11c4180.png"></p>
+<h2 id="优点与借鉴"><a href="#优点与借鉴" class="headerlink" title="优点与借鉴"></a>优点与借鉴</h2><ol>
+<li>可交互的Nomogram，实用性远远大于普通的Nomogram以及其余的一些动态的Nomogram，可以在临床上的风险预测模型等上进行应用。</li>
+<li>适用于绝大多数流行的临床模型，在很多方面都可以适配的很好，应用较为方便。</li>
+<li>将模型摘要与相应的动态图链接在期刊上，有可能使模型更可翻译，并在实现所有研究都可理解和可重现的建议方面使分析更透明。</li>
+</ol>
+ 
       <!-- reward -->
       
     </div>

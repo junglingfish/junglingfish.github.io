@@ -1,6 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Network-based machine learning approach to predict immunotherapy response in cancer patents</title>
+    <url>/2022/09/09/Network-based-machine-learning-approach-to-predict-immunotherapy-response-in-cancer-patents/</url>
+    <content><![CDATA[<p><img src="C:\Users\junglingfish\AppData\Roaming\Typora\typora-user-images\image-20220909163740037.png" alt="image-20220909163740037"></p>
+<p>文章链接：<a href="https://www.nature.com/articles/s41467-022-31535-6">https://www.nature.com/articles/s41467-022-31535-6</a></p>
+<p>源代码：<a href="https://github.com/SBIlab/NetBio">https://github.com/SBIlab/NetBio</a></p>
+<p>本地文件位置：C:\Users\junglingfish\Zotero\storage\3H2GYTTM</p>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary:"></a>Summary:</h2><ol>
+<li>提出了一个机器学习(ML)框架，利用基于网络的分析来识别ICI治疗生物标志物(NetBio)，可以做出稳健的预测。</li>
+<li>整理了700多例ICI治疗的患者样本，包括临床结果和转录组数据，并观察到基于netbio的预测准确预测了三种不同癌症类型的ICI治疗反应——黑色素瘤、胃癌和膀胱癌。</li>
+<li>提出了一种基于网络的方法，以有效地选择免疫治疗反应相关的生物标志物，可以对精确的肿瘤进行基于ML的稳健预测</li>
+</ol>
+<h2 id="Method："><a href="#Method：" class="headerlink" title="Method："></a>Method：</h2><p><img src="C:\Users\junglingfish\AppData\Roaming\Typora\typora-user-images\image-20220909165418495.png" alt="image-20220909165418495"></p>
+<ol>
+<li>我们使用STRING PPI网络(STRING score &gt;700)，包含16,957个节点和420,381条边。首先，采用网络传播，使用ICI靶标(例如，nivolumab的PD1或atezolizumab的PD-L1)作为种子基因，在网络上传播ICI靶标的影响。网络传播的一个特点是，越接近ICI目标的节点影响分数越高。接下来，我们选择了影响分数高的基因(top 200基因)，并鉴定了这些基因富集的生物通路(Reactome pathways)。然后，我们使用所选择的生物通路来预测免疫治疗反应，并将这些通路视为网络生物标记物(NetBio)。</li>
+<li>为了进行基于ml的免疫治疗-反应预测，我们使用NetBio作为输入特征；作为阴性对照，我们使用了基于基因的生物标志物(即免疫治疗靶基因)、基于肿瘤微环境的生物标志物或从数据驱动的ML方法中选择的通路。</li>
+<li>为了测试输入特征的预测性能，我们测量了在预测(i)通过免疫治疗后缩小肿瘤大小测量的药物反应或(ii)患者的survival方面的性能。</li>
+<li>独立的训练集和测试集</li>
+</ol>
+<h2 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h2><ol>
+<li>研究内交叉验证表明，基于netbio的ML可以对ICI治疗反应和总生存期做出一致的预测。<ol>
+<li>进行了留一交叉验证(LOOCV)，使用NetBio或其他已知的免疫治疗相关生物标志物(包括药物靶标)来测量性能。为此，我们使用了四个免疫治疗队列——两个黑色素瘤队列，一个转移性胃癌队列(Kim等。29)和一个膀胱癌队列(IMvigor210)。</li>
+<li>基于网络的方法，将生物标志物扩展到药物靶点的网络邻居，提高了基于药物靶点表达水平的预测。</li>
+<li>将NetBio的预测性能与之前确定的其他ci相关生物标志物进行了比较，发现在大多数情况下，我们的方法在所有四个癌症数据集上都更好</li>
+<li>当使用更少的训练数据集训练ML模型时，NetBio的预测与其他生物标志物相似或更好。（蒙特卡洛交叉验证）</li>
+</ol>
+</li>
+<li>使用基于netbio的ML进行跨研究预测可以在其他独立的黑色素瘤数据集中做出一致的预测<ol>
+<li>使用NetBio训练的ML模型在使用独立数据集时可以做出稳健的预测，而使用其他生物标志物时预测性能较差</li>
+<li>当三个独立的训练数据集合并到单个数据集时，基于netbio的预测效果优于其他方法</li>
+<li>当训练数据和测试数据来自不同的队列时，NetBio提高了预测性能。（三个不同队列）</li>
+<li>测试了ML模型是否能在训练样本较少的情况下做出稳健的预测。同样，与基于GeneBio或基于tme - bio的ML模型相比，样本量较小的NetBio-based ML做出了一致的预测。</li>
+</ol>
+</li>
+<li>将基于netbio的预测与其他先进的免疫治疗反应预测方法以及基于深度神经网络(DNN)的方法进行了比较34(参见方法)，优于</li>
+<li>基于netbio的预测优于纯数据驱动的特征选择方法。对新数据集的适应性和预测的准确性，加入PPI网络后优于传统方法</li>
+<li>基于netbio的预测再现了外部癌症基因组图谱(TCGA)数据集中的免疫微环境。<ol>
+<li>进一步研究了哪些NetBio通路与免疫细胞比例高度相关</li>
+<li>用NetBio通路可以捕获胃癌和膀胱癌的免疫微环境。</li>
+</ol>
+</li>
+<li>NetBio通路表达水平与膀胱癌患者的免疫细胞浸润有关。<ol>
+<li>使用了不同的免疫表型，包括(i)免疫沙漠(少于10个CD8 T细胞)，(ii)排除(CD8 T细胞毗邻肿瘤细胞)，和(iii)浸润(CD8 T细胞接触肿瘤细胞)表型30，并比较了趋化和吞噬途径的表达水平与免疫表型，与免疫荒漠或排除表型相比，免疫浸润表型表现出最高的通路表达水平(Mann-Whitney U P &lt; 0.05)，提示NetBio通路可捕获膀胱癌白细胞浸润分数。</li>
+</ol>
+</li>
+<li>在ML模型中结合NetBio表达水平和肿瘤突变负担(TMB)可以提高PDL1抑制剂治疗膀胱癌患者的预测能力。<ol>
+<li>结合NetBio表达水平和TMB改善了atezolizumab治疗膀胱癌患者的总生存预测</li>
+<li>观察到联合预测因子使用TMB正确地将无应答者从预测应答者中重新分类(R2NR;)，并正确地将有应答者与单独tmb预测的无应答者重新分类</li>
+<li>在观察到改进的预测性能之后，我们试图确定一种对预测性能的改进负责的特征。</li>
+<li>为了进一步研究Raf激活通路作为ici治疗的生物标志物的潜在作用，我们分析了PD-L1表达、TMB和Raf激活成分的表达水平与外部TCGA膀胱癌数据集总生存期之间的关联</li>
+</ol>
+</li>
+</ol>
+<h2 id="优点和借鉴"><a href="#优点和借鉴" class="headerlink" title="优点和借鉴"></a>优点和借鉴</h2><ol>
+<li>基于netbio的ML表现出一致的预测性能，而基于GeneBio、tme - bio的预测或纯数据驱动方法识别的特征表现出较差的优化性能。</li>
+<li>尽管使用较小的网络时ICI响应预测性能下降，但基于网络的方法仍然比基于目标基因和基于肿瘤微环境的生物标志物表现更好。(对比STRING &gt; 900 (NetBio 900)和使用STRING &gt; 700 (NetBio 700)发现的NetBio通路)</li>
+<li>作为ICI靶点的网络邻居，NetBio通路可以从转录组数据中稳健地捕获患者的免疫组成。</li>
+<li>将所有癌症类型合并到一个单一的综合数据集并不能提高ICI反应预测的性能，这表明癌症类型特异性ICI反应机制的重要性。ICI治疗反应的基于表达的生物标志物在不同的癌症类型中是不同的</li>
+<li>整体参考其基于NetBio的ML方法在对ICI治疗效果的预测模型的开发过程，运用的方法以及最后的结果检验。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>ML</category>
+        <category>ICI</category>
+        <category>immunity</category>
+      </categories>
+      <tags>
+        <tag>ML</tag>
+        <tag>ICI</tag>
+        <tag>immunity</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>POAF</title>
+    <url>/2022/07/31/POAF/</url>
+    <content><![CDATA[<h2 id="Risk-factor-analysis-and-prediction-model-validation-of-atrial-fibrillation-after-esophageal-cancer-surgery"><a href="#Risk-factor-analysis-and-prediction-model-validation-of-atrial-fibrillation-after-esophageal-cancer-surgery" class="headerlink" title="Risk factor analysis and prediction model validation of atrial fibrillation after esophageal cancer surgery"></a><strong>Risk factor analysis and prediction model validation of atrial fibrillation after esophageal cancer surgery</strong></h2><p>性别：性别(1&#x3D;男，2&#x3D;女)</p>
+<p>主任医师（1&#x3D;吴明，2&#x3D;范军强，3&#x3D;柴莹，4&#x3D;沈钢，5&#x3D;张赛，6&#x3D;赵百亲，7&#x3D;李星，8&#x3D;滕志华，9&#x3D;张国飞，10&#x3D;杨懋颖）</p>
+<p>吸烟史、饮酒史、高血压、冠脉疾病、糖尿病：0无1有</p>
+<p>术前新辅助治疗：1是0否</p>
+<p>术前新辅助治疗是否为免疫：1是</p>
+<p>术前心脏病史、术前心律失常病史、术前是否为窦性心律：0否1是</p>
+<p>心超提示（0&#x3D;正常，1&#x3D;左房增大，2&#x3D;双房增大，3&#x3D;房间隔，4&#x3D;室间隔，5&#x3D;PCI术后，6&#x3D;左室增大，7&#x3D;心律失常，8&#x3D;二尖瓣关闭不全，9&#x3D;主动脉瓣关闭不全）</p>
+<p>术中转开放（0&#x3D;胸部，1&#x3D;腹部，2&#x3D;都1，3&#x3D;本为开放手术，4&#x3D;0）5&#x3D;腹部腔镜胸部开放，6&#x3D;胸部腔镜腹部开放，40&#x3D;4+肺，30&#x3D;3+肺</p>
+<p>吻合部位（1&#x3D;颈部，2&#x3D;胸部）</p>
+<p>代食管物（1&#x3D;胃，2&#x3D;结肠，3&#x3D;空肠）</p>
+<p>造瘘管（0&#x3D;0，1&#x3D;空肠造瘘，2&#x3D;鼻肠管）</p>
+]]></content>
+      <categories>
+        <category>POAF_EC</category>
+      </categories>
+      <tags>
+        <tag>POAF_EC</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>EC_POAF_dataset</title>
     <url>/2022/07/10/EC-POAF-dataset/</url>
     <content><![CDATA[<h1 id="Meta-analysis-of-risk-factors-and-complications-associated-with-atrial-fibrillation-after-oesophagectomy"><a href="#Meta-analysis-of-risk-factors-and-complications-associated-with-atrial-fibrillation-after-oesophagectomy" class="headerlink" title="Meta-analysis of risk factors and complications associated with atrial fibrillation after oesophagectomy"></a>Meta-analysis of risk factors and complications associated with atrial fibrillation after oesophagectomy</h1><p><img src="https://s2.loli.net/2022/07/10/y3Uph1TgeVKfASD.png" alt="Snipaste_2022-07-10_20-16-27.png"></p>
@@ -8,17 +102,17 @@
 <p>In total, 53 studies including 9087 patients were eligible for analysis. The overall incidence of postoperative AF was 16⋅5 per cent. Coronary artery disease and hypertension were associated with AF , whereas diabetes, smoking and chronic obstructive pulmonary disease were not. Patients with AF had a significantly higher risk of overall postoperative adverse events than those without fibrillation (odds ratio (OR) 5⋅50, 95 per cent c.i. 3⋅51 to 8⋅30), including 30-day mortality (OR 2⋅49, 1⋅70 to 3⋅64), anastomotic leak (OR 2⋅65, 1⋅53 to 4⋅59) and pneumonia (OR 3⋅42, 2⋅39 to 4⋅90).</p>
 <h2 id="Risk-factors-of-atrial-fibrillation-occurring-after-radical-surgery-of-esophageal-carcinoma"><a href="#Risk-factors-of-atrial-fibrillation-occurring-after-radical-surgery-of-esophageal-carcinoma" class="headerlink" title="Risk factors of atrial fibrillation occurring after radical surgery of esophageal carcinoma"></a>Risk factors of atrial fibrillation occurring after radical surgery of esophageal carcinoma</h2><p><img src="https://s2.loli.net/2022/07/10/gNQ35R29eCtvqMj.png" alt="Snipaste_2022-07-10_20-20-32.png"></p>
 <p><a href="https://cardiothoracicsurgery.biomedcentral.com/articles/10.1186/s13019-019-0885-z">Risk factors of atrial fibrillation occurring after radical surgery of esophageal carcinoma | Journal of Cardiothoracic Surgery | Full Text (biomedcentral.com)</a></p>
-<p>Ji-bin Lu,  Correspondence: <a href="mailto:&#x79;&#x75;&#x6e;&#101;&#x72;&#51;&#x30;&#50;&#x31;&#64;&#x73;&#105;&#x6e;&#x61;&#x2e;&#99;&#x6f;&#109;">&#x79;&#x75;&#x6e;&#101;&#x72;&#51;&#x30;&#50;&#x31;&#64;&#x73;&#105;&#x6e;&#x61;&#x2e;&#99;&#x6f;&#109;</a></p>
+<p>Ji-bin Lu,  Correspondence: <a href="mailto:&#121;&#x75;&#x6e;&#101;&#114;&#51;&#x30;&#x32;&#x31;&#64;&#115;&#x69;&#110;&#97;&#46;&#99;&#x6f;&#109;">&#121;&#x75;&#x6e;&#101;&#114;&#51;&#x30;&#x32;&#x31;&#64;&#115;&#x69;&#110;&#97;&#46;&#99;&#x6f;&#109;</a></p>
 <p>Of the 335 patients with esophageal cancer, 48 had AF within one week after operation. Univariate analysis indicated that the age (OR: 4 . 8 9 ; CI: 2 . 5 3–9.47, P: 0.000), gender (OR: 2 . 2 6 ; CI: 1 . 1 7–4.37, P: 0.013), history of peripheral vascular disease (OR: 2 . 2 9 ; CI: 1 . 0 6–4.92, P: 0.030), history of cardiac stents or angina pectoris (OR: 2 7 . 3 0 ; CI: 1 2 . 4 4–59.91, P: 0.000), preoperative BNP level (OR: 2 7 . 1 3 ; CI: 1 0 . 9 7–67.06, P: 0.000), preoperative left ventricular diastolic dysfunction (OR: 2 . 2 2 ; CI: 1 . 1 9–4.14, P: 0.012), operative method (OR: 2 . 0 9 ; CI: 1 . 0 0 2–4.380, P: 0.046), intraoperative blood transfusion (OR: 2 0 . 2 4 ; CI: 8 . 3 9–48.82, P: 0.000), and adhesion between lymph nodes and pericardium were risk factors (OR: 2 . 0 5 ; CI: 1 . 0 8–3.87, P: 0.024). Furthermore, multivariate analysis displayed that advanced age (OR: 5 . 0 4 4 ; CI: 1 . 7 4 8–14.554, P: 0 . 003), male (OR: 6 . 1 6 1 ; CI: 2 . 1 4 3–17 .715, P: 0.001), history of cardiac stents or angina pectoris (OR: 48.813; CI: 1 3 . 6 7 4–174. 246, P: 0.000), preoperative BNP &gt; 100 (OR: 41.515; CI: 9 . 3 8 0–183.732, P: 0.000), open surgery (OR: 3 . 3 5 7 ; CI: 1 . 0 2 6–10.983, P: 0.045), intraoperative blood transfusion (OR: 58.404; CI: 1 0 . 7 7 7–316.509, P: 0.000), and adhesion between lymph nodes and pericardium (OR: 3 . 9 5 4 ; CI: 1 . 3 6 4–11.459, P: 0.011) were risk factors which could increase the incidence of postoperative AF.</p>
 <p><img src="https://s2.loli.net/2022/07/10/mj8iIfYDvhFB5Xn.png" alt="Snipaste_2022-07-10_20-24-40.png"></p>
 <h2 id="Age-and-neo-adjuvant-chemotherapy-increase-the-risk-of-atrial-fibrillation-following-oesophagectomy"><a href="#Age-and-neo-adjuvant-chemotherapy-increase-the-risk-of-atrial-fibrillation-following-oesophagectomy" class="headerlink" title="Age and neo-adjuvant chemotherapy increase the risk of atrial fibrillation following oesophagectomy"></a>Age and neo-adjuvant chemotherapy increase the risk of atrial fibrillation following oesophagectomy</h2><p><img src="https://s2.loli.net/2022/07/10/EHX2qfesOkwQ6Ib.png" alt="Snipaste_2022-07-10_20-19-13.png"></p>
 <p><a href="https://academic.oup.com/ejcts/article/42/3/438/404705?login=true">https://academic.oup.com/ejcts/article/42/3/438/404705?login=true</a></p>
-<p>Vinay P. Rao,  e-mail: <a href="mailto:&#118;&#105;&#110;&#x61;&#121;&#112;&#x72;&#x61;&#x6f;&#64;&#104;&#x6f;&#x74;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;">&#118;&#105;&#110;&#x61;&#121;&#112;&#x72;&#x61;&#x6f;&#64;&#104;&#x6f;&#x74;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;</a> (V.P. Rao).</p>
+<p>Vinay P. Rao,  e-mail: <a href="mailto:&#x76;&#105;&#110;&#97;&#x79;&#x70;&#x72;&#x61;&#111;&#x40;&#x68;&#111;&#116;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x63;&#111;&#109;">&#x76;&#105;&#110;&#97;&#x79;&#x70;&#x72;&#x61;&#111;&#x40;&#x68;&#111;&#116;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x63;&#111;&#109;</a> (V.P. Rao).</p>
 <p>Data were extracted from a database of patients who underwent oesophagectomy between 1991 and 2009. Patients with pre-operative arrhythmias were excluded leaving 997 patients for further analysis. Univariate and multivariate logistic regression analyses were performed to identify factors predicting AF, and receiver operating characteristic curves were generated from a model using these predictors. Statistical significance was reflected in a P-value of &lt;0.05.</p>
 <p>Despite the identification of age and neo-adjuvant chemotherapy as predictors of AF, the moderate discriminative ability of predictive modelling does not support the use of prophylactic anti-arrhythmic drugs. However, the high incidence of AF after major thoracic surgery makes it necessary to understand its underlying mechanisms better before prophylactic strategies are considered.</p>
 <p><img src="https://s2.loli.net/2022/07/10/jULeqz3C9yOoBPI.png" alt="Snipaste_2022-07-10_20-18-16.png"></p>
 <h2 id="The-predictive-value-of-new-onset-atrial-fibrillation-on-postoperative-morbidity-after-esophagectomy"><a href="#The-predictive-value-of-new-onset-atrial-fibrillation-on-postoperative-morbidity-after-esophagectomy" class="headerlink" title="The predictive value of new-onset atrial fibrillation on postoperative morbidity after esophagectomy"></a>The predictive value of new-onset atrial fibrillation on postoperative morbidity after esophagectomy</h2><p><img src="https://s2.loli.net/2022/07/10/tzD1BNoElLin3sd.png" alt="Snipaste_2022-07-10_20-36-14.png"></p>
-<p>M. F . J . Seesing, <a href="mailto:&#x6a;&#46;&#112;&#x2e;&#x72;&#117;&#117;&#114;&#x64;&#x61;&#64;&#x75;&#x6d;&#x63;&#x75;&#x74;&#x72;&#x65;&#x63;&#104;&#x74;&#x2e;&#110;&#x6c;">&#x6a;&#46;&#112;&#x2e;&#x72;&#117;&#117;&#114;&#x64;&#x61;&#64;&#x75;&#x6d;&#x63;&#x75;&#x74;&#x72;&#x65;&#x63;&#104;&#x74;&#x2e;&#110;&#x6c;</a></p>
+<p>M. F . J . Seesing, <a href="mailto:&#106;&#x2e;&#x70;&#46;&#x72;&#117;&#x75;&#114;&#x64;&#97;&#64;&#117;&#x6d;&#99;&#x75;&#x74;&#114;&#x65;&#99;&#104;&#x74;&#46;&#x6e;&#108;">&#106;&#x2e;&#x70;&#46;&#x72;&#117;&#x75;&#114;&#x64;&#97;&#64;&#117;&#x6d;&#99;&#x75;&#x74;&#114;&#x65;&#99;&#104;&#x74;&#46;&#x6e;&#108;</a></p>
 <p><a href="https://academic.oup.com/dote/article/31/11/doy028/4959875?login=true">https://academic.oup.com/dote/article/31/11/doy028/4959875?login=true</a></p>
 <p>SUMMARY. New-onset atrial fibrillation (AF) is frequently observed following esophagectomy and may predict other complications. The aim of the current study was to determine the association between, and the possible predictive value of, new-onset AF and infectious complications following esophagectomy . Consecutive patients who underwent elective esophagectomy with curative intent for esophageal cancer between 2004 and 2016 in the University Medical Center Utrecht were included from a prospective database. The date of diagnosis of the complications included in the current analysis was retrospectively collected from the computerized medical record. The association between new-onset AF and infectious complications was studied in univariable and multivariable logistic regression analyses. A total of 455 patients were included. In 93 (20.4%) patients new-onset AF was encountered after esophagectomy . There were no significant differences in patient and treatment-related characteristics between the patients with and without AF. In 9 (9.7%) patients, AF was the only adverse event following surgery . In multivariable analyses, AF was significantly associated with infectious complications in general (OR 3.00, 95% CI: 1.73–5.21). More specifically, AF was associated with pulmonary complications (OR 2.06, 95% CI: 1.29–3.30), pneumonia (OR 2.41, 95% CI: 1.48–3.91) and anastomotic leakage (OR 3.00, 95% CI: 1.80–4.99). In patients who underwent esophagectomy, new-onset AF was highly associated with infectious complications. AF may serve as an early clinical warning sign for anastomotic leakage. Therefore, further evaluation of patients who develop new-onset AF after esophagectomy is warranted.</p>
 <p>Consecutive patients who underwent an elective esophagectomy for esophageal or gastroesophageal junction cancer with curative intent between 2004 and 2016 at the University Medical Center (UMC) Utrecht were included in this study . Exclusion criteria included preoperative presence of AF and American Association of Anaesthesiologists (ASA) IV classification. Patients included in this study were not given routine AF prophylaxis postoperatively . Patient and treatment-related characteristics as well as surgical outcome data were prospectively recorded in an Institutional Review Board (IRB) approved database. The date of diagnosis of the complications included in the current analysis was retrospectively collected from the computerized medical record. Creactive protein (CRP) levels were registered at the day of AF diagnosis. This study was approved by the Medical Ethics Review Committee of the UMC Utrecht (IRB-number 13–061&#x2F;C), and informed consent was waived.</p>

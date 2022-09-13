@@ -6,7 +6,7 @@
   <link href="https://junglingfish.github.io/atom.xml" rel="self"/>
   
   <link href="https://junglingfish.github.io/"/>
-  <updated>2022-09-11T08:50:34.189Z</updated>
+  <updated>2022-09-13T11:48:58.164Z</updated>
   <id>https://junglingfish.github.io/</id>
   
   <author>
@@ -17,21 +17,64 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Predictive Capability of Metabolic Panels for Postoperative Atrial Fibrillation in Cardiac Surgery Patients</title>
+    <link href="https://junglingfish.github.io/2022/09/13/Predictive-Capability-of-Metabolic-Panels-for-Postoperative-Atrial-Fibrillation-in-Cardiac-Surgery-Patients/"/>
+    <id>https://junglingfish.github.io/2022/09/13/Predictive-Capability-of-Metabolic-Panels-for-Postoperative-Atrial-Fibrillation-in-Cardiac-Surgery-Patients/</id>
+    <published>2022-09-13T11:23:00.000Z</published>
+    <updated>2022-09-13T11:48:58.164Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://pic.imgdb.cn/item/632068a316f2c2beb19f71b0.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;论文链接：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="POAF" scheme="https://junglingfish.github.io/categories/POAF/"/>
+    
+    
+    <category term="POAF" scheme="https://junglingfish.github.io/tags/POAF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Incidence, predictors, and outcome for post-operative atrial fibrillation in Indian patients undergoing off-pump coronary artery bypass grafting-a prospective observational study</title>
+    <link href="https://junglingfish.github.io/2022/09/13/Incidence-predictors-and-outcome-for-post-operative-atrial-fibrillation-in-Indian-patients-undergoing-off-pump-coronary-artery-bypass-grafting-a-prospective-observational-study/"/>
+    <id>https://junglingfish.github.io/2022/09/13/Incidence-predictors-and-outcome-for-post-operative-atrial-fibrillation-in-Indian-patients-undergoing-off-pump-coronary-artery-bypass-grafting-a-prospective-observational-study/</id>
+    <published>2022-09-13T10:58:10.000Z</published>
+    <updated>2022-09-13T11:22:24.691Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://pic.imgdb.cn/item/6320630816f2c2beb19843cc.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;论文链接：&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/35756560/&quot;&gt;Incidence, predictors, and outcome for post-operative atrial fibrillation in Indian patients undergoing off-pump coronary artery bypass grafting-a prospective observational study - PubMed (nih.gov)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;本地文件链接：C:\Users\junglingfish\Zotero\storage\2KYJHLNF</summary>
+    
+    
+    
+    <category term="POAF" scheme="https://junglingfish.github.io/categories/POAF/"/>
+    
+    
+    <category term="POAF" scheme="https://junglingfish.github.io/tags/POAF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>DynNom: Visualising statistical models using dynamic nomograms</title>
     <link href="https://junglingfish.github.io/2022/09/11/DynNom-Visualising-statistical-models-using-dynamic-nomograms/"/>
     <id>https://junglingfish.github.io/2022/09/11/DynNom-Visualising-statistical-models-using-dynamic-nomograms/</id>
     <published>2022-09-11T08:30:08.000Z</published>
-    <updated>2022-09-11T08:50:34.189Z</updated>
+    <updated>2022-09-13T11:14:45.235Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;p&gt;&lt;img src=&quot;https://pic.imgdb.cn/item/631d9ef816f2c2beb11a25ef.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;文章链接：&lt;a</summary>
-        
-      
+&lt;p&gt;文章链接：&lt;a href=&quot;https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0225253&quot;&gt;Visualising statistical models using dynamic nomograms | PLOS ONE&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;GitHub链接：&lt;/p&gt;
+&lt;p&gt;本地链接：C:\Users\junglingfish\Zotero\storage\DFF3R3PG</summary>
     
     
     
@@ -49,17 +92,13 @@
     <link href="https://junglingfish.github.io/2022/09/09/Network-based-machine-learning-approach-to-predict-immunotherapy-response-in-cancer-patents/"/>
     <id>https://junglingfish.github.io/2022/09/09/Network-based-machine-learning-approach-to-predict-immunotherapy-response-in-cancer-patents/</id>
     <published>2022-09-09T08:28:05.000Z</published>
-    <updated>2022-09-11T08:36:04.316Z</updated>
+    <updated>2022-09-13T11:14:24.454Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;p&gt;&lt;img src=&quot;https://pic.imgdb.cn/item/631d9df216f2c2beb11919da.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;文章链接：&lt;a</summary>
-        
-      
+&lt;p&gt;文章链接：&lt;a href=&quot;https://www.nature.com/articles/s41467-022-31535-6&quot;&gt;https://www.nature.com/articles/s41467-022-31535-6&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;源代码：&lt;a href=&quot;https://github.com/SBIlab/NetBio&quot;&gt;https://github.com/SBIlab/NetBio&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;本地文件位置：C:\Users\junglingfish\Zotero\storage\3H2GYTTM</summary>
     
     
     

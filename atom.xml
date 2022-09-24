@@ -6,7 +6,7 @@
   <link href="https://junglingfish.github.io/atom.xml" rel="self"/>
   
   <link href="https://junglingfish.github.io/"/>
-  <updated>2022-09-13T11:48:58.164Z</updated>
+  <updated>2022-09-24T13:49:57.234Z</updated>
   <id>https://junglingfish.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Prediction of lymph node metastases using pre- treatment PET radiomics of the primary tumour in esophageal adenocarcinoma: an external validation study</title>
+    <link href="https://junglingfish.github.io/2022/09/24/Prediction-of-lymph-node-metastases-using-pre-treatment-PET-radiomics-of-the-primary-tumour-in-esophageal-adenocarcinoma-an-external-validation-study/"/>
+    <id>https://junglingfish.github.io/2022/09/24/Prediction-of-lymph-node-metastases-using-pre-treatment-PET-radiomics-of-the-primary-tumour-in-esophageal-adenocarcinoma-an-external-validation-study/</id>
+    <published>2022-09-24T12:12:18.000Z</published>
+    <updated>2022-09-24T13:49:57.234Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://pic.imgdb.cn/item/632ef4b516f2c2beb125f0b1.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;论文链接： &lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/33264032/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/33264032/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;GitHub链接：&lt;/p&gt;
+&lt;p&gt;本地链接：</summary>
+    
+    
+    
+    
+    <category term="PET" scheme="https://junglingfish.github.io/tags/PET/"/>
+    
+    <category term="EC" scheme="https://junglingfish.github.io/tags/EC/"/>
+    
+  </entry>
   
   <entry>
     <title>Predictive Capability of Metabolic Panels for Postoperative Atrial Fibrillation in Cardiac Surgery Patients</title>

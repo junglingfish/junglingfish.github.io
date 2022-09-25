@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>Prediction of lymph node metastases using pre- treatment PET radiomics of the primary tumour in esophageal adenocarcinoma: an external validation study |  Junglingfish&#39;s Sea</title>
+      <title>Accurate Esophageal Gross Tumor Volume Segmentation in PET/CT using Two-Stream Chained 3D Deep Network Fusion |  Junglingfish&#39;s Sea</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -54,7 +54,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-Prediction-of-lymph-node-metastases-using-pre-treatment-PET-radiomics-of-the-primary-tumour-in-esophageal-adenocarcinoma-an-external-validation-study"
+  id="post-Accurate-Esophageal-Gross-Tumor-Volume-Segmentation-in-PET-CT-using-Two-Stream-Chained-3D-Deep-Network-Fusion"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -65,7 +65,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Prediction of lymph node metastases using pre- treatment PET radiomics of the primary tumour in esophageal adenocarcinoma: an external validation study
+  Accurate Esophageal Gross Tumor Volume Segmentation in PET/CT using Two-Stream Chained 3D Deep Network Fusion
 </h1>
  
 
@@ -73,15 +73,15 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2022/09/24/Prediction-of-lymph-node-metastases-using-pre-treatment-PET-radiomics-of-the-primary-tumour-in-esophageal-adenocarcinoma-an-external-validation-study/" class="article-date">
-  <time datetime="2022-09-24T12:12:18.000Z" itemprop="datePublished">2022-09-24</time>
+      <a href="/2022/09/25/Accurate-Esophageal-Gross-Tumor-Volume-Segmentation-in-PET-CT-using-Two-Stream-Chained-3D-Deep-Network-Fusion/" class="article-date">
+  <time datetime="2022-09-25T10:53:13.000Z" itemprop="datePublished">2022-09-25</time>
 </a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">1.5k</span>
+            <span class="post-count">753</span>
         </span>
     </span>
 
@@ -90,7 +90,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">5 min</span>
+            <span class="post-count">2 min</span>
         </span>
     </span>
 </div>
@@ -105,48 +105,51 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p><img src="https://pic.imgdb.cn/item/632ef4b516f2c2beb125f0b1.png"></p>
-<p>论文链接： <a target="_blank" rel="noopener" href="https://pubmed.ncbi.nlm.nih.gov/33264032/">https://pubmed.ncbi.nlm.nih.gov/33264032/</a></p>
+  <p><img src="https://pic.imgdb.cn/item/633033af16f2c2beb18343a3.png"></p>
+<p>论文链接：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1909.01524">https://arxiv.org/abs/1909.01524</a></p>
 <p>GitHub链接：</p>
 <p>本地链接：<span id="more"></span></p>
 <h2 id="Summary："><a href="#Summary：" class="headerlink" title="Summary："></a>Summary：</h2><ol>
-<li>通过开发和外部验证三种预测模型，改善食管腺癌的临床淋巴结分期(cN-分期);一个只有临床变量，一个只有正电子发射断层扫描(PET)放射组学，以及一个临床和放射组学联合模型。</li>
-<li>两组患者的淋巴结转移发生率均为58%。临床、放射组学和联合模型的曲线下面积在发展队列中为0.79、0.69和0.82，在外部验证队列中为0.65、0.63和0.69，具有良好的校准效果。开发队列和验证队列的当前cN-阶段曲线下面积分别为0.60和0.66。对于总生存率，临床和放射组学联合模型在外部验证队列中获得了最佳的识别性能(X2 &#x3D; 6.08, df &#x3D; 1, p &#x3D; 0.01)。</li>
-<li>在发展队列中发现了改进的预测性能，但使用来自原发肿瘤的PET放射组学模型并没有在外部验证队列中完全复制。</li>
+<li>目标是利用RTCT和正电子发射断层扫描(PET)成像模式，以促进更精确的GTV分割。</li>
+<li>提出了一种双流链分割方法，通过早期和晚期基于3D深度网络的融合有效地融合CT和PET模式。它将来自两个独立子网络的预测结合和合并，一个只使用RTCT训练，另一个同时使用RTCT和注册PET图像训练。前者利用CT的解剖背景信息，而后者则利用PET的敏感，但有时虚假和强大的对比。</li>
+<li>为了实现融合和分割，我们提出了一个简单而有效的递进语义嵌套网络(PSNN)模型，其性能优于更复杂的模型。</li>
 </ol>
-<h2 id="Method："><a href="#Method：" class="headerlink" title="Method："></a>Method：</h2><p><a target="_blank" rel="noopener" href="https://pic.imgdb.cn/item/632ef99416f2c2beb12be279.png"><img src="https://pic.imgdb.cn/item/632ef99416f2c2beb12be279.png"></a></p>
+<h2 id="Method："><a href="#Method：" class="headerlink" title="Method："></a>Method：</h2><p><img src="https://pic.imgdb.cn/item/6330526016f2c2beb1ab78d6.png"></p>
 <ol>
-<li>为了减少观察者间的差异性，使用“ Automatic Decision Tree Learning Algorithm for Advanced Segmentation 高级分割自动决策树学习算法”(ATLAAS)在PET图像上系统地勾画食道原发性肿瘤总体积(gtv)。【Matlab】</li>
+<li><p>PET to RTCT Registration</p>
+<ol>
+<li>为了生成对齐的PET&#x2F;RTCT对，我们将基于三次b样条的变形配准算法应用于由粗到细的多尺度变形过程中。因为它具有良好的形状建模能力和捕获局部非刚体运动的效率。</li>
+<li>我们使用两次CT扫描的肺肿块中心作为初始匹配位置。</li>
+<li>我们从P-HNN模型产生的掩码中计算质量中心，即使在严重的病理病例中，它也能稳健地分割肺场。</li>
+<li>这将为胸部和上腹部区域提供可靠的初始匹配，有助于成功register。然后将产生的变形场应用于诊断PET，使其在规划阶段与RTCT对齐。</li>
 </ol>
-<p><img src="https://pic.imgdb.cn/item/632ef97116f2c2beb12bb134.png"></p>
+</li>
+<li><p>Two-Stream Chained Deep Fusion</p>
+<ol>
+<li>目标是有效地利用PET和CT成像空间中的互补信息。</li>
+</ol>
+</li>
+</ol>
+<p><img src="https://pic.imgdb.cn/item/633055ed16f2c2beb1afc394.png"></p>
+<p><img src="https://pic.imgdb.cn/item/6330562816f2c2beb1b008a3.png"></p>
+<ol start="3">
+<li>PSNN Model<ol>
+<li>一种结合P-HNN和UNet优势的自然而简单的方法是使用与P-HNN本质上相同的参数块，但反转深度监督路径的方向，以允许高级信息传播到较低级别空间。我们将这种方法称为递进语义嵌套网络(PSNN)。</li>
+</ol>
+</li>
+</ol>
+<p><img src="https://pic.imgdb.cn/item/6330573616f2c2beb1b14bad.png"></p>
+<h2 id="Results："><a href="#Results：" class="headerlink" title="Results："></a>Results：</h2><ol>
+<li>我们使用110名食管癌患者的数据集对我们的方法进行了广泛的评估，这些患者均诊断为II期或以上，并正在接受放疗。每个患者都有一个诊断PET&#x2F;CT对和一个治疗RTCT扫描。</li>
+</ol>
+<p><img src="https://pic.imgdb.cn/item/6330578a16f2c2beb1b1b11a.png"></p>
 <ol start="2">
-<li>特征提取和预测模型开发<ol>
-<li>采用递归特征消除(RFE)和最小绝对收缩和选择算子(LASSO)方法选择最佳临床特征组合[从年龄、性别、肿瘤位置、组织细胞类型、临床T分期、新辅助治疗类型和肿瘤回归级别(标准评分)中选择]，使用受试者操作曲线(ROC)的AUC测量值。</li>
-<li>计算放射组学特征的Pearson相关性，并将阈值设置为0.85。截断逻辑评估每个辐射组特征的平均绝对相关性，去掉平均绝对相关性最大的特征。</li>
-<li>对被切除节点阳性(pN+)和阴性(pN0)结果之间的每个特征计算非参数Kolmogorov-Smirnov检验统计量，仅保留p值&lt; 0.05的特征，以确保两类显著区分。</li>
-<li>最后，我们使用带有五倍交叉验证的射频识别算法来搜索频率非零的特征组合，并根据其AUC找到最优组合。</li>
-<li>使用STAGE中所选特征的均值和标准差进行RFE前的特征值归一化。在STAGE队列中使用多变量逻辑回归建立预测模型，然后使用回归模型加权的系数计算每个患者的放射组学评分(Rad- score)。使用选定的临床变量和Rad-评分开发了一个联合模型。使用在STAGE中应用的相同数据转换执行CROSS中的外部验证。</li>
-</ol>
-</li>
-<li>数据分析<ol>
-<li>采用双侧t检验(连续变量)或Χ2&#x2F;fisher检验(分类变量)检验STAGE和CROSS之间的临床人口学差异。95%置信区间(95% ci)的估计来自2000个分层自举重复。使用校准图和Hosmer- Lemeshow检验统计量评估模型的适当校准。</li>
-<li>通过将选择的临床变量和放射组学特征输入带有截尾的Cox比例风险模型，探索预后意义。我们计算了哈勒尔一致性指数，并对生存模型进行了显著性log- rank检验。为了确保高阶放射组学变量不仅仅是简单肿瘤特征的替代品，我们还将一致性指数和log- rank检验与原发性代谢肿瘤体积(MTV)和总病变糖酵解(TLG)进行了比较</li>
-</ol>
-</li>
-</ol>
-<h2 id="Result："><a href="#Result：" class="headerlink" title="Result："></a>Result：</h2><ol>
-<li>临床数据部分：四个临床特征，采用优化AUC的RFE方法，将年龄、临床T分期、新辅助治疗和标准分级纳入多变量模型。该多变量临床模型的平均auc在STAGE为0.79 [95% CI(0.71-0.88)]，在CROSS为0.65 [95% CI(0.50-0.78)]。在同一队列中，基于cN的模型的平均aus分别为0.60 [95% CI(0.52-0.69)]和0.66 [95% C(0.55-0.78)]。</li>
-<li>PET-CT部分：基于放射组学的模型选取了9个放射组学特征，STAGE组学的平均auc较低，为0.69 [95% CI (0.59 - 0.77)]， CROSS组学的平均auc为0.63 [95% CI(0.47-0.77)]。基于临床和放射组学的联合模型分别得出这些队列的平均auc为0.82 [95% CI(0.74-0.89)]和0.69 [95% CI 0.54 - 0.82]。</li>
+<li>性能最好的结果是PSNN模型结合链式EF+LF，表明系统的每个组件都对我们的最终性能有贡献。</li>
 </ol>
 <h2 id="优点和借鉴："><a href="#优点和借鉴：" class="headerlink" title="优点和借鉴："></a>优点和借鉴：</h2><ol>
-<li>开发了三个模型：使用临床变量，PET放射组学和临床放射组学模型，将临床数据和放射组学数据结合。</li>
-<li>分为stage和cross两个队列，多中心采集数据，测试集和验证集有一定区分度。</li>
-<li>临床-放射组学联合模型在外部队列的患者组间表现出良好的区分能力，但在发展队列中并非如此。</li>
-<li>未能证明放射组学特征在预测食管腺癌LNMs方面明显优于cN分期或临床多变量模型。首先，临床PET图像的空间分辨率太大，无法进行放射学分析;其次，高阶放射学变量是简单MTV的替代品。</li>
-<li>我们的结果增加了目前cN分期准确性仍然很差的证据。国际癌症控制联盟TNM的分类很大程度上依赖于解剖学定义CT对LNMs的敏感性低至18%，因为它依赖于形态学，不能区分隐匿性恶性转移和正常大小的淋巴结。</li>
-<li>外部验证研究很少进行，特别是在放射组学领域。为了消除描述的观察者间可变性，我们使用一种标准化自动分割方法(ATLAAS)在PET图像上勾画肿瘤。也使用了标准化生物标志物(IBSI)。</li>
-<li>主要限制是新辅助治疗后缺乏PET放射组学。</li>
-<li>本研究无法评估淋巴结对PET新辅助治疗的反应，因此，基线放射学特征与术后最终病理淋巴结评价之间存在间接比较。</li>
+<li>提出并验证了一种使用RTCT和PET+RTCT成像通道的双流链式3D深度网络融合管道，用于分割食道gtv。诊断性PET和RTCT首先通过基于语义的肺质量中心初始化进行纵向注册，以实现鲁棒性。</li>
+<li>使用Eq.(2)的EF训练的所有三个网络都比仅使用RTCT训练的网络产生更准确的分割结果。这验证了利用PET补充RTCT对GTV分割的有效性</li>
+<li>PSNN模型比最先进的P-HNN和DenseUNet网络的性能要好。</li>
 </ol>
  
       <!-- reward -->
@@ -212,12 +215,12 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://junglingfish.github.io/2022/09/24/Prediction-of-lymph-node-metastases-using-pre-treatment-PET-radiomics-of-the-primary-tumour-in-esophageal-adenocarcinoma-an-external-validation-study/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://junglingfish.github.io/2022/09/25/Accurate-Esophageal-Gross-Tumor-Volume-Segmentation-in-PET-CT-using-Two-Stream-Chained-3D-Deep-Network-Fusion/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/EC/" rel="tag">EC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PET/" rel="tag">PET</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/EC/" rel="tag">EC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PET-CT/" rel="tag">PET_CT</a></li></ul>
 
     </footer>
   </div>
@@ -225,19 +228,10 @@
    
   <nav class="article-nav">
     
-      <a href="/2022/09/25/Accurate-Esophageal-Gross-Tumor-Volume-Segmentation-in-PET-CT-using-Two-Stream-Chained-3D-Deep-Network-Fusion/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            Accurate Esophageal Gross Tumor Volume Segmentation in PET/CT using Two-Stream Chained 3D Deep Network Fusion
-          
-        </div>
-      </a>
     
-    
-      <a href="/2022/09/13/Predictive-Capability-of-Metabolic-Panels-for-Postoperative-Atrial-Fibrillation-in-Cardiac-Surgery-Patients/" class="article-nav-link">
+      <a href="/2022/09/24/Prediction-of-lymph-node-metastases-using-pre-treatment-PET-radiomics-of-the-primary-tumour-in-esophageal-adenocarcinoma-an-external-validation-study/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">Predictive Capability of Metabolic Panels for Postoperative Atrial Fibrillation in Cardiac Surgery Patients</div>
+        <div class="article-nav-title">Prediction of lymph node metastases using pre- treatment PET radiomics of the primary tumour in esophageal adenocarcinoma: an external validation study</div>
       </a>
     
   </nav>

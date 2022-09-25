@@ -6,7 +6,7 @@
   <link href="https://junglingfish.github.io/atom.xml" rel="self"/>
   
   <link href="https://junglingfish.github.io/"/>
-  <updated>2022-09-24T13:49:57.234Z</updated>
+  <updated>2022-09-25T13:31:27.093Z</updated>
   <id>https://junglingfish.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Accurate Esophageal Gross Tumor Volume Segmentation in PET/CT using Two-Stream Chained 3D Deep Network Fusion</title>
+    <link href="https://junglingfish.github.io/2022/09/25/Accurate-Esophageal-Gross-Tumor-Volume-Segmentation-in-PET-CT-using-Two-Stream-Chained-3D-Deep-Network-Fusion/"/>
+    <id>https://junglingfish.github.io/2022/09/25/Accurate-Esophageal-Gross-Tumor-Volume-Segmentation-in-PET-CT-using-Two-Stream-Chained-3D-Deep-Network-Fusion/</id>
+    <published>2022-09-25T10:53:13.000Z</published>
+    <updated>2022-09-25T13:31:27.093Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://pic.imgdb.cn/item/633033af16f2c2beb18343a3.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;论文链接：&lt;a href=&quot;https://arxiv.org/abs/1909.01524&quot;&gt;https://arxiv.org/abs/1909.01524&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;GitHub链接：&lt;/p&gt;
+&lt;p&gt;本地链接：</summary>
+    
+    
+    
+    
+    <category term="EC" scheme="https://junglingfish.github.io/tags/EC/"/>
+    
+    <category term="PET_CT" scheme="https://junglingfish.github.io/tags/PET-CT/"/>
+    
+  </entry>
   
   <entry>
     <title>Prediction of lymph node metastases using pre- treatment PET radiomics of the primary tumour in esophageal adenocarcinoma: an external validation study</title>
@@ -32,9 +54,9 @@
     
     
     
-    <category term="PET" scheme="https://junglingfish.github.io/tags/PET/"/>
-    
     <category term="EC" scheme="https://junglingfish.github.io/tags/EC/"/>
+    
+    <category term="PET" scheme="https://junglingfish.github.io/tags/PET/"/>
     
   </entry>
   

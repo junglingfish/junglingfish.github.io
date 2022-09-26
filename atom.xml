@@ -6,7 +6,7 @@
   <link href="https://junglingfish.github.io/atom.xml" rel="self"/>
   
   <link href="https://junglingfish.github.io/"/>
-  <updated>2022-09-25T13:31:27.093Z</updated>
+  <updated>2022-09-26T13:00:49.360Z</updated>
   <id>https://junglingfish.github.io/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Multi-institutional Validation of Two-Streamed Deep Learning Method for Automated Delineation of Esophageal Gross Tumor Volume Using planning-CT and FDG-PET/CT</title>
+    <link href="https://junglingfish.github.io/2022/09/26/Multi-institutional-Validation-of-Two-Streamed-Deep-Learning-Method-for-Automated-Delineation-of-Esophageal-Gross-Tumor-Volume-Using-planning-CT-and-FDG-PET-CT/"/>
+    <id>https://junglingfish.github.io/2022/09/26/Multi-institutional-Validation-of-Two-Streamed-Deep-Learning-Method-for-Automated-Delineation-of-Esophageal-Gross-Tumor-Volume-Using-planning-CT-and-FDG-PET-CT/</id>
+    <published>2022-09-26T12:16:11.000Z</published>
+    <updated>2022-09-26T13:00:49.360Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://pic1.imgdb.cn/item/6331988f16f2c2beb1e39c85.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;论文链接：[&lt;a href=&quot;https://arxiv.org/abs/2110.05280&quot;&gt;2110.05280] Multi-institutional Validation of Two-Streamed Deep Learning Method for Automated Delineation of Esophageal Gross Tumor Volume using planning-CT and FDG-PETCT (arxiv.org)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;GitHub链接：&lt;/p&gt;
+&lt;p&gt;本地链接：</summary>
+    
+    
+    
+    
+    <category term="EC" scheme="https://junglingfish.github.io/tags/EC/"/>
+    
+    <category term="PET_CT" scheme="https://junglingfish.github.io/tags/PET-CT/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Accurate Esophageal Gross Tumor Volume Segmentation in PET/CT using Two-Stream Chained 3D Deep Network Fusion</title>
     <link href="https://junglingfish.github.io/2022/09/25/Accurate-Esophageal-Gross-Tumor-Volume-Segmentation-in-PET-CT-using-Two-Stream-Chained-3D-Deep-Network-Fusion/"/>
     <id>https://junglingfish.github.io/2022/09/25/Accurate-Esophageal-Gross-Tumor-Volume-Segmentation-in-PET-CT-using-Two-Stream-Chained-3D-Deep-Network-Fusion/</id>
     <published>2022-09-25T10:53:13.000Z</published>
-    <updated>2022-09-25T13:31:27.093Z</updated>
+    <updated>2022-09-26T12:16:22.599Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;img src=&quot;https://pic.imgdb.cn/item/633033af16f2c2beb18343a3.png&quot;&gt;&lt;/p&gt;

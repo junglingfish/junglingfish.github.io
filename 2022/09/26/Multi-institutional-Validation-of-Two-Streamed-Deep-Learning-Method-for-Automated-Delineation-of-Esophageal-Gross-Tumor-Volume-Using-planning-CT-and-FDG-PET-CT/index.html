@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>Accurate Esophageal Gross Tumor Volume Segmentation in PET/CT using Two-Stream Chained 3D Deep Network Fusion |  Junglingfish&#39;s Sea</title>
+      <title>Multi-institutional Validation of Two-Streamed Deep Learning Method for Automated Delineation of Esophageal Gross Tumor Volume Using planning-CT and FDG-PET/CT |  Junglingfish&#39;s Sea</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -54,7 +54,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-Accurate-Esophageal-Gross-Tumor-Volume-Segmentation-in-PET-CT-using-Two-Stream-Chained-3D-Deep-Network-Fusion"
+  id="post-Multi-institutional-Validation-of-Two-Streamed-Deep-Learning-Method-for-Automated-Delineation-of-Esophageal-Gross-Tumor-Volume-Using-planning-CT-and-FDG-PET-CT"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -65,7 +65,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Accurate Esophageal Gross Tumor Volume Segmentation in PET/CT using Two-Stream Chained 3D Deep Network Fusion
+  Multi-institutional Validation of Two-Streamed Deep Learning Method for Automated Delineation of Esophageal Gross Tumor Volume Using planning-CT and FDG-PET/CT
 </h1>
  
 
@@ -73,15 +73,15 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2022/09/25/Accurate-Esophageal-Gross-Tumor-Volume-Segmentation-in-PET-CT-using-Two-Stream-Chained-3D-Deep-Network-Fusion/" class="article-date">
-  <time datetime="2022-09-25T10:53:13.000Z" itemprop="datePublished">2022-09-25</time>
+      <a href="/2022/09/26/Multi-institutional-Validation-of-Two-Streamed-Deep-Learning-Method-for-Automated-Delineation-of-Esophageal-Gross-Tumor-Volume-Using-planning-CT-and-FDG-PET-CT/" class="article-date">
+  <time datetime="2022-09-26T12:16:11.000Z" itemprop="datePublished">2022-09-26</time>
 </a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">753</span>
+            <span class="post-count">1.4k</span>
         </span>
     </span>
 
@@ -90,7 +90,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">2 min</span>
+            <span class="post-count">5 min</span>
         </span>
     </span>
 </div>
@@ -105,51 +105,78 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p><img src="https://pic.imgdb.cn/item/633033af16f2c2beb18343a3.png"></p>
-<p>论文链接：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1909.01524">https://arxiv.org/abs/1909.01524</a></p>
+  <p><img src="https://pic1.imgdb.cn/item/6331988f16f2c2beb1e39c85.png"></p>
+<p>论文链接：[<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2110.05280">2110.05280] Multi-institutional Validation of Two-Streamed Deep Learning Method for Automated Delineation of Esophageal Gross Tumor Volume using planning-CT and FDG-PETCT (arxiv.org)</a></p>
 <p>GitHub链接：</p>
 <p>本地链接：<span id="more"></span></p>
 <h2 id="Summary："><a href="#Summary：" class="headerlink" title="Summary："></a>Summary：</h2><ol>
-<li>目标是利用RTCT和正电子发射断层扫描(PET)成像模式，以促进更精确的GTV分割。</li>
-<li>提出了一种双流链分割方法，通过早期和晚期基于3D深度网络的融合有效地融合CT和PET模式。它将来自两个独立子网络的预测结合和合并，一个只使用RTCT训练，另一个同时使用RTCT和注册PET图像训练。前者利用CT的解剖背景信息，而后者则利用PET的敏感，但有时虚假和强大的对比。</li>
-<li>为了实现融合和分割，我们提出了一个简单而有效的递进语义嵌套网络(PSNN)模型，其性能优于更复杂的模型。</li>
+<li>为了验证深度学习多模态食管GTV轮廓模型的临床适用性。</li>
+<li>两流深度模型在内部测试中获得了较高的分割精度(CT时Dice评分为0.81,CT+PET时为0.83)，对外部评估具有良好的泛化能力(CT时Dice评分为0.80)。</li>
+<li>在多用户评价中，在深度模型的辅助下，观察者间变化和所需轮廓时间分别减少了37.6%和48.0%。</li>
 </ol>
-<h2 id="Method："><a href="#Method：" class="headerlink" title="Method："></a>Method：</h2><p><img src="https://pic.imgdb.cn/item/6330526016f2c2beb1ab78d6.png"></p>
+<h2 id="Methods："><a href="#Methods：" class="headerlink" title="Methods："></a>Methods：</h2><p><img src="https://pic1.imgdb.cn/item/63319aac16f2c2beb1e5d482.png"></p>
 <ol>
-<li><p>PET to RTCT Registration</p>
-<ol>
-<li>为了生成对齐的PET&#x2F;RTCT对，我们将基于三次b样条的变形配准算法应用于由粗到细的多尺度变形过程中。因为它具有良好的形状建模能力和捕获局部非刚体运动的效率。</li>
-<li>我们使用两次CT扫描的肺肿块中心作为初始匹配位置。</li>
-<li>我们从P-HNN模型产生的掩码中计算质量中心，即使在严重的病理病例中，它也能稳健地分割肺场。</li>
-<li>这将为胸部和上腹部区域提供可靠的初始匹配，有助于成功register。然后将产生的变形场应用于诊断PET，使其在规划阶段与RTCT对齐。</li>
-</ol>
-</li>
-<li><p>Two-Stream Chained Deep Fusion</p>
-<ol>
-<li>目标是有效地利用PET和CT成像空间中的互补信息。</li>
+<li>Datasets<ol>
+<li>来自4个机构的606例食管癌患者，根据PET扫描仪的可用性和不同机构的分期方案，来自机构-1的患者(共252例)接受了额外的诊断性FDGPET&#x2F;CT扫描，而来自其他机构的354例患者仅接受了pCT扫描。</li>
 </ol>
 </li>
 </ol>
-<p><img src="https://pic.imgdb.cn/item/633055ed16f2c2beb1afc394.png"></p>
-<p><img src="https://pic.imgdb.cn/item/6330562816f2c2beb1b008a3.png"></p>
-<ol start="3">
-<li>PSNN Model<ol>
-<li>一种结合P-HNN和UNet优势的自然而简单的方法是使用与P-HNN本质上相同的参数块，但反转深度监督路径的方向，以允许高级信息传播到较低级别空间。我们将这种方法称为递进语义嵌套网络(PSNN)。</li>
-</ol>
-</li>
-</ol>
-<p><img src="https://pic.imgdb.cn/item/6330573616f2c2beb1b14bad.png"></p>
-<h2 id="Results："><a href="#Results：" class="headerlink" title="Results："></a>Results：</h2><ol>
-<li>我们使用110名食管癌患者的数据集对我们的方法进行了广泛的评估，这些患者均诊断为II期或以上，并正在接受放疗。每个患者都有一个诊断PET&#x2F;CT对和一个治疗RTCT扫描。</li>
-</ol>
-<p><img src="https://pic.imgdb.cn/item/6330578a16f2c2beb1b1b11a.png"></p>
+<p><img src="https://pic1.imgdb.cn/item/63319caa16f2c2beb1e7e9dd.png"></p>
+<p><img src="https://pic1.imgdb.cn/item/63319ed216f2c2beb1ea25b2.png"></p>
 <ol start="2">
-<li>性能最好的结果是PSNN模型结合链式EF+LF，表明系统的每个组件都对我们的最终性能有贡献。</li>
+<li>Model development <ol>
+<li>我们实现了一种双流三维食道GTV分割方法，其中包括一个pCT流，只使用pCT输入来分割GTV(表示pCT模型)，以及一个使用早期融合模块的pCT+PET流，以及一个使用后期融合模块的pCT+PET流，利用pCT和PET多模态中的联合信息来分割GTV(表示pCT+PET模型)。</li>
+<li>在pCT+PET流中，PET与pCT对齐，首先将诊断CT(伴随PET)注册到pCT，然后利用变形场将PET映射到pCT，分割骨干采用3D渐进语义嵌套网络。</li>
 </ol>
-<h2 id="优点和借鉴："><a href="#优点和借鉴：" class="headerlink" title="优点和借鉴："></a>优点和借鉴：</h2><ol>
-<li>提出并验证了一种使用RTCT和PET+RTCT成像通道的双流链式3D深度网络融合管道，用于分割食道gtv。诊断性PET和RTCT首先通过基于语义的肺质量中心初始化进行纵向注册，以实现鲁棒性。</li>
-<li>使用Eq.(2)的EF训练的所有三个网络都比仅使用RTCT训练的网络产生更准确的分割结果。这验证了利用PET补充RTCT对GTV分割的有效性</li>
-<li>PSNN模型比最先进的P-HNN和DenseUNet网络的性能要好。</li>
+</li>
+<li>Quantitative Evaluation of Contour Accuracy <ol>
+<li>使用三种常见的分割指标(9,10)定量评估轮廓精度，即骰子相似系数(DSC)、95% Hausdorff距离(HD95)和平均表面距离(ASD)。</li>
+<li>在外部测试中，报告了pCT模型的性能。我们还探讨了这些指标在不同特征亚组中的比较:临床t分期和不同肿瘤位置(颈部、食管上、中、下三分之一)。</li>
+</ol>
+</li>
+<li>Human Experts’ Assessment of Contour Accuracy <ol>
+<li>进一步由人类专家进行评估实验，以评估临床接受深度模型预测所需的轮廓编辑工作。专家评估预测结果需要手工修改的程度。</li>
+</ol>
+</li>
+<li>Multi-user Evaluation  <ol>
+<li>进一步开展了一项多用户研究，涉及4个不同机构的4名经委员会认证的放射肿瘤学家(3-6年食管癌治疗经验)。</li>
+<li>我们的深度模型预测的准确性与DSC、HD95和ASD方面的多用户性能进行了比较。</li>
+</ol>
+</li>
+<li>Statistical Analysis <ol>
+<li>采用Wilcoxon配对符号秩检验比较<ol>
+<li>pCT模型与pCT+PET模型在内部检验集中的DSC、HD95和ASD评分;在外部测试集中，提出的模型与3D DenseUNet方法之间存在差异;</li>
+<li>DSC、HD95、ASD和深度学习辅助轮廓绘制前后在多用户9评估中的时间。</li>
+</ol>
+</li>
+<li>采用Manning-Whitney U检验比较DSC、HD95和ASD在不同临床t分期的差异。</li>
+<li>采用多元线性回归逐步模型选择来比较不同肿瘤位置的指标，因为一个大肿瘤可能位于多个食道区域。</li>
+<li>分别评估平均DSC、HD95和ASD与人工修改程度的Spearman相关系数。</li>
+</ol>
+</li>
+</ol>
+<h2 id="Result："><a href="#Result：" class="headerlink" title="Result："></a>Result：</h2><ol>
+<li>内部验证结果&amp;外部验证结果 优秀，在其DSC、HD95和ASD评分均优于之前领先的3D DenseUNet。</li>
+<li>专家的评估显示，DSC、HD95和ASD作为轮廓精度评价标准的可靠性，与临床实际需要的轮廓编辑工作相一致。33例(9%)患者预测结果不可接受，我们的模型未能准确定位肿瘤，导致骰子小，距离误差大。</li>
+<li>Multi-user evaluation中，在20个测试案例中，我们的模型在DSC和ASD方面与这四位放射肿瘤学家的表现相当。</li>
+<li>我们的pCT模型平均需要20秒来预测一个病人。</li>
+</ol>
+<h2 id="优点和借鉴"><a href="#优点和借鉴" class="headerlink" title="优点和借鉴"></a>优点和借鉴</h2><ol>
+<li>我们开发了一个两流3D深度学习模型，多中心验证。其pCT模型在内部测试中实现了平均骰子相似系数(DSC)和平均表面距离(ASD)分别为0.81和2.7mm，在外部测试中推广效果良好，平均DSC和ASD分别为0.80和2.8mm。添加PET扫描后，pCT+PET模型进一步将DSC和ASD提高到0.83和2.2mm用于内部测试。通过允许放射肿瘤学家编辑深度模型预测，整体精度得到了提高，观察者间变异和轮廓时间分别减少了37.6%和48.0%。</li>
+<li>临床实践中，深度模型可以通过提高轮廓绘制的准确性和一致性，并减少时间，使放射肿瘤学家受益。</li>
+<li>我们的模型具有良好的可泛化性，可能来自以下几个方面:(1)不同机构的pCT相关标准化成像协议，尽管pCT扫描仪厂商不同;(2) CT中物理校正良好的HU值;(3)来自机构1的148名训练患者相对足够覆盖食道肿瘤的不同CT特征;(4)我们已经有效地训练了我们的双流深度GTV网络。</li>
+<li>不足<ol>
+<li>没有在外部验证集上验证pCT+PET模型的性能，因为外部数据集患者没有PET&#x2F;CT扫描的数据。</li>
+<li>与临床晚期t期患者相比，cT2患者的pCT模型表现较差。</li>
+<li>我们排除了胃食管交界处原发肿瘤的患者，因为他们在我们的研究人群中相对罕见(&lt; 2%)。</li>
+</ol>
+</li>
+<li>借鉴意义<ol>
+<li>双流模型，pCT pCT+PET，准确性</li>
+<li>多中心，四个机构的数据集，泛化性好</li>
+<li>专家验证加多用户验证，内部验证较为全面，确保模型的性能</li>
+</ol>
+</li>
 </ol>
  
       <!-- reward -->
@@ -215,7 +242,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://junglingfish.github.io/2022/09/25/Accurate-Esophageal-Gross-Tumor-Volume-Segmentation-in-PET-CT-using-Two-Stream-Chained-3D-Deep-Network-Fusion/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://junglingfish.github.io/2022/09/26/Multi-institutional-Validation-of-Two-Streamed-Deep-Learning-Method-for-Automated-Delineation-of-Esophageal-Gross-Tumor-Volume-Using-planning-CT-and-FDG-PET-CT/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -228,19 +255,10 @@
    
   <nav class="article-nav">
     
-      <a href="/2022/09/26/Multi-institutional-Validation-of-Two-Streamed-Deep-Learning-Method-for-Automated-Delineation-of-Esophageal-Gross-Tumor-Volume-Using-planning-CT-and-FDG-PET-CT/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            Multi-institutional Validation of Two-Streamed Deep Learning Method for Automated Delineation of Esophageal Gross Tumor Volume Using planning-CT and FDG-PET/CT
-          
-        </div>
-      </a>
     
-    
-      <a href="/2022/09/24/Prediction-of-lymph-node-metastases-using-pre-treatment-PET-radiomics-of-the-primary-tumour-in-esophageal-adenocarcinoma-an-external-validation-study/" class="article-nav-link">
+      <a href="/2022/09/25/Accurate-Esophageal-Gross-Tumor-Volume-Segmentation-in-PET-CT-using-Two-Stream-Chained-3D-Deep-Network-Fusion/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">Prediction of lymph node metastases using pre- treatment PET radiomics of the primary tumour in esophageal adenocarcinoma: an external validation study</div>
+        <div class="article-nav-title">Accurate Esophageal Gross Tumor Volume Segmentation in PET/CT using Two-Stream Chained 3D Deep Network Fusion</div>
       </a>
     
   </nav>

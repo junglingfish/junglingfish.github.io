@@ -150,6 +150,114 @@
     
     
     <article
+  id="post-Lymph-Node-Gross-Tumor-Volume-Detection-and-Segmentation-via-Distance-based-Gating-using-3D-CT-PET-Imaging-in-Radiotherapy"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/09/26/Lymph-Node-Gross-Tumor-Volume-Detection-and-Segmentation-via-Distance-based-Gating-using-3D-CT-PET-Imaging-in-Radiotherapy/"
+    >Lymph Node Gross Tumor Volume Detection and Segmentation via Distance-based Gating using 3D CT/PET Imaging in Radiotherapy</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/09/26/Lymph-Node-Gross-Tumor-Volume-Detection-and-Segmentation-via-Distance-based-Gating-using-3D-CT-PET-Imaging-in-Radiotherapy/" class="article-date">
+  <time datetime="2022-09-26T13:12:27.000Z" itemprop="datePublished">2022-09-26</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p><img src="https://pic1.imgdb.cn/item/6331a62d16f2c2beb1f2e289.png"></p>
+<p>论文链接：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2008.11870">https://arxiv.org/abs/2008.11870</a></p>
+<p>GitHub链接：</p>
+<p>本地链接：</p>
+<h2 id="Summary："><a href="#Summary：" class="headerlink" title="Summary："></a>Summary：</h2><ol>
+<li>提出了一种有效的基于距离的门控方法，以分而治之的方式模拟和简化由放射肿瘤学家进行的高级推理协议。</li>
+<li>采用二元或软距离门控的方法将GTVLN分为“肿瘤近端”和“肿瘤远端”两个亚组。这是由于观察到每个类别在外观、大小和其他LN特征上都有不同但重叠的分布。</li>
+<li>提出了一种新的多分支分割检测网络，每个分支专门学习一个GTVLN类别特征，并将多分支的输出融合到推理中。</li>
+<li>与之前最先进的研究相比，我们的结果证实了平均召回率从72.5%显著提高到78.2%。最高的GTVLN召回率为82.5%，精确度为20%，这与临床相关且有价值，因为人类观察者的灵敏度往往较低(据文献报道，对于最有经验的放射肿瘤学家来说，灵敏度约为80%)</li>
+</ol>
+<h2 id="Methods："><a href="#Methods：" class="headerlink" title="Methods："></a>Methods：</h2><p><img src="https://pic1.imgdb.cn/item/6331aa3a16f2c2beb1f75cd2.png"></p>
+<p>多分支GTVLN分割检测方法：</p>
+<ol>
+<li><p>首先计算三维肿瘤距离转换图，基于此将任何GTVLN分为肿瘤近端或肿瘤邻近子类别。</p>
+<ol>
+<li>先从原发肿瘤o计算三维肿瘤距离转换图，记为XD。每个体素xi处的值表示该体素与原发肿瘤掩膜之间的最短距离。设B(O)是包含肿瘤边界体素的集合。体素xi处的距离变换值计算为:(其中d(xi, q)是xi到q的欧氏距离。)</li>
+</ol>
+<p><img src="https://pic1.imgdb.cn/item/63396d3716f2c2beb119bdac.png"></p>
+<p>​	</p>
+</li>
+<li><p>接下来，设计一个多分支按分割检测网络，其中每个分支集中于GTVLN分割的一个子组。通过在两个分支的输出处对惩罚函数施加一个二进制或软距离门控函数来实现的。</p>
+<ol>
+<li>将GTVLN分为肿瘤近端亚群和肿瘤远端亚群</li>
+<li>每个分支由一个独立的解码器实现，以学习和提取子群的特定信息，而它们共享一个编码器来提取GTVLN的共同图像特征。</li>
+</ol>
+</li>
+<li><p>每个分支都可以学习特定的参数，分别用于肿瘤-近端和肿瘤-邻端GTVLN的分割和检测。</p>
+</li>
+<li><p>Distance-based Gating Module</p>
+<ol>
+<li>Binary Distance Gating (BG). <ol>
+<li>根据肿瘤距离图XD，我们将图像体素分为两组，xprox和xdis，分别为肿瘤近端和肿瘤远端，其中prox &#x3D; {i|xDi≤d0, xDi∈XD}， dis &#x3D; {i|xDi &gt; d0, xDi∈XD}。两个解码器的门控转换定义为Gprox &#x3D; 1[xDi≤d0]和Gdist &#x3D; 1−Gprox，其中1[·]是一个指示函数，当参数为真时为1，否则为零。</li>
+<li>将GTVLN严格划分为两个互不关联的类别，每个分支专注于从一个类别中解码和学习。</li>
+</ol>
+</li>
+<li>Soft Distance Gating (SG). <ol>
+<li>我们进一步探索了一种软门控方法，该方法可以随着GTVLN样本距离肿瘤的远近线性改变其惩罚权重。这可以避免样本靠近近端和远端类别边界时权重值的突然变化。</li>
+<li>Gdist &#x3D; 1−Gprox</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p><img src="https://pic1.imgdb.cn/item/633ec72616f2c2beb1258196.png"></p>
+<h2 id="Results"><a href="#Results" class="headerlink" title="Results:"></a>Results:</h2><ol>
+<li>Datasets: 141例食管癌患者的无对比rtct + 所有患者均接受放疗治疗。放射肿瘤学家标记原发肿瘤和所有GTVLN的3D分割mask + 对于每个患者，我们都有一个非对比RTCT和一对PET&#x2F;CT扫描。在纵隔或上腹部区域共有651个带有体素注释的GTVLN数据集 + 60%、10%、30%分别进行培训、验证和测试</li>
+<li>Results:<ol>
+<li>多模态输入，即RTCT、PET和肿瘤距离图的早期融合(EF)对检测GTVLN有很大的好处。与单独使用RTCT相比，采用EF时mRecall和mFROC的性能有明显的绝对提高</li>
+<li>基于距离的门控策略明显有效，Multi-net BG、多分支BG和多分支SG的选择一致提高了性能。</li>
+<li>使用基于距离的门控策略，我们提出的多分支方法比Multi-net BG模型的性能要好得多。</li>
+</ol>
+</li>
+</ol>
+<p><img src="https://pic1.imgdb.cn/item/633ec82e16f2c2beb127634c.png"></p>
+<p>​	</p>
+<h2 id="优点与借鉴"><a href="#优点与借鉴" class="headerlink" title="优点与借鉴"></a>优点与借鉴</h2><ol>
+<li>多模态输入，TCT、PET和肿瘤距离图的早期融合(EF)</li>
+<li>基于距离的门控策略</li>
+<li>多分支方法更为优秀</li>
+</ol>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/EC/" rel="tag">EC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PET-CT/" rel="tag">PET_CT</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
   id="post-Multi-institutional-Validation-of-Two-Streamed-Deep-Learning-Method-for-Automated-Delineation-of-Esophageal-Gross-Tumor-Volume-Using-planning-CT-and-FDG-PET-CT"
   class="article article-type-post"
   itemscope
@@ -660,64 +768,6 @@
     <footer class="article-footer">
        
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/POAF-EC/" rel="tag">POAF_EC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data/" rel="tag">data</a></li></ul>
-
-    </footer>
-  </div>
-
-   
-    
-</article>
-
-    
-    <article
-  id="post-R-coding"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2022/07/10/R-coding/"
-    >R_coding</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2022/07/10/R-coding/" class="article-date">
-  <time datetime="2022-07-10T10:13:02.000Z" itemprop="datePublished">2022-07-10</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/R-coding/">R_coding</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h2 id="R-命令"><a href="#R-命令" class="headerlink" title="R 命令"></a>R 命令</h2><h4 id="包的安装"><a href="#包的安装" class="headerlink" title="包的安装"></a>包的安装</h4><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">install.packages<span class="punctuation">(</span><span class="string">&quot;***&quot;</span><span class="punctuation">)</span></span><br><span class="line">install.packages <span class="punctuation">(</span><span class="string">&quot;ABC&quot;</span><span class="punctuation">,</span>repos<span class="operator">=</span><span class="string">&quot;http://mirror.bjtu.edu.cn/ &quot;</span><span class="punctuation">)</span></span><br><span class="line">BiocManager<span class="operator">::</span>install<span class="punctuation">(</span><span class="string">&#x27;SingleCellExperiment&#x27;</span><span class="punctuation">)</span></span><br><span class="line">devtools<span class="operator">::</span>install_github<span class="punctuation">(</span><span class="string">&quot;Japrin/sscClust&quot;</span><span class="punctuation">)</span></span><br><span class="line">.libPaths<span class="punctuation">(</span><span class="punctuation">)</span> <span class="comment">#包的位置</span></span><br><span class="line">installed.packages<span class="punctuation">(</span><span class="punctuation">)</span> <span class="comment">#查看你已经安装了哪些包。</span></span><br><span class="line">available.packages<span class="punctuation">(</span><span class="punctuation">)</span> <span class="comment">#可以查看自己的机器可以安装哪些包</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="保存"><a href="#保存" class="headerlink" title="保存"></a>保存 
-      <a class="article-more-link" href="/2022/07/10/R-coding/"
-        >阅读更多...</a
-      >
-       
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R-coding/" rel="tag">R_coding</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Single-cell-analysis/" rel="tag">Single_cell_analysis</a></li></ul>
 
     </footer>
   </div>

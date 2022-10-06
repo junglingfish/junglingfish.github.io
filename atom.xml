@@ -6,7 +6,7 @@
   <link href="https://junglingfish.github.io/atom.xml" rel="self"/>
   
   <link href="https://junglingfish.github.io/"/>
-  <updated>2022-09-26T13:00:49.360Z</updated>
+  <updated>2022-10-06T12:26:53.619Z</updated>
   <id>https://junglingfish.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Lymph Node Gross Tumor Volume Detection and Segmentation via Distance-based Gating using 3D CT/PET Imaging in Radiotherapy</title>
+    <link href="https://junglingfish.github.io/2022/09/26/Lymph-Node-Gross-Tumor-Volume-Detection-and-Segmentation-via-Distance-based-Gating-using-3D-CT-PET-Imaging-in-Radiotherapy/"/>
+    <id>https://junglingfish.github.io/2022/09/26/Lymph-Node-Gross-Tumor-Volume-Detection-and-Segmentation-via-Distance-based-Gating-using-3D-CT-PET-Imaging-in-Radiotherapy/</id>
+    <published>2022-09-26T13:12:27.000Z</published>
+    <updated>2022-10-06T12:26:53.619Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://pic1.imgdb.cn/item/6331a62d16f2c2beb1f2e289.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;论文链接：&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="EC" scheme="https://junglingfish.github.io/tags/EC/"/>
+    
+    <category term="PET_CT" scheme="https://junglingfish.github.io/tags/PET-CT/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Multi-institutional Validation of Two-Streamed Deep Learning Method for Automated Delineation of Esophageal Gross Tumor Volume Using planning-CT and FDG-PET/CT</title>
     <link href="https://junglingfish.github.io/2022/09/26/Multi-institutional-Validation-of-Two-Streamed-Deep-Learning-Method-for-Automated-Delineation-of-Esophageal-Gross-Tumor-Volume-Using-planning-CT-and-FDG-PET-CT/"/>
     <id>https://junglingfish.github.io/2022/09/26/Multi-institutional-Validation-of-Two-Streamed-Deep-Learning-Method-for-Automated-Delineation-of-Esophageal-Gross-Tumor-Volume-Using-planning-CT-and-FDG-PET-CT/</id>
     <published>2022-09-26T12:16:11.000Z</published>
-    <updated>2022-09-26T13:00:49.360Z</updated>
+    <updated>2022-09-26T13:12:33.257Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;img src=&quot;https://pic1.imgdb.cn/item/6331988f16f2c2beb1e39c85.png&quot;&gt;&lt;/p&gt;

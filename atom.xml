@@ -6,7 +6,7 @@
   <link href="https://junglingfish.github.io/atom.xml" rel="self"/>
   
   <link href="https://junglingfish.github.io/"/>
-  <updated>2022-10-06T12:26:53.619Z</updated>
+  <updated>2022-12-10T13:28:58.826Z</updated>
   <id>https://junglingfish.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Spatially resolved proteomics via tissue expansion</title>
+    <link href="https://junglingfish.github.io/2022/12/10/Spatially-resolved-proteomics-via-tissue-expansion/"/>
+    <id>https://junglingfish.github.io/2022/12/10/Spatially-resolved-proteomics-via-tissue-expansion/</id>
+    <published>2022-12-10T10:35:31.000Z</published>
+    <updated>2022-12-10T13:28:58.826Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://pic.imgdb.cn/item/639461a8b1fccdcd36bc0e22.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;论文链接：&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Proteomics" scheme="https://junglingfish.github.io/tags/Proteomics/"/>
+    
+  </entry>
   
   <entry>
     <title>Lymph Node Gross Tumor Volume Detection and Segmentation via Distance-based Gating using 3D CT/PET Imaging in Radiotherapy</title>
